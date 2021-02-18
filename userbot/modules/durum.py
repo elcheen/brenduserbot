@@ -1,10 +1,10 @@
-# Copyright (C) 2020 Yusuf Usta.
+# Copyright (C) 2021 ᴇʟçɪɴ ¦ 🇯🇵
 #
 # Licensed under the GPL-3.0 License;
 # you may not use this file except in compliance with the License.
 #
 
-# Asena UserBot - Yusuf Usta
+# Berend UserBot - ᴇʟçɪɴ ¦ 🇯🇵
 
 from userbot import CMD_HELP, ASYNC_POOL, tgbot, SPOTIFY_DC, G_DRIVE_CLIENT_ID, lastfm, LYDIA_API_KEY, YOUTUBE_API_KEY, OPEN_WEATHER_MAP_APPID, AUTO_PP, REM_BG_API_KEY, OCR_SPACE_API_KEY, PM_AUTO_BAN, BOTLOG_CHATID, ASENA_VERSION
 from userbot.events import register
@@ -15,11 +15,11 @@ from userbot.cmdhelp import CmdHelp
 # ██████ LANGUAGE CONSTANTS ██████ #
 
 from userbot.language import get_value
-LANG = get_value("durum")
+LANG = get_value("hal")
 
 # ████████████████████████████████ #
 
-def durum(s):
+def hal(s):
     if s == None:
         return "❌"
     else:
@@ -28,8 +28,8 @@ def durum(s):
         else:
             return "✅"
 
-@register(outgoing=True, pattern="^.durum|^.status")
-async def durums(event):
+@register(outgoing=True, pattern="^.hal|^.status")
+async def hals(event):
 
     await event.edit(f"""
 **Python {LANG['VERSION']}:** `{python_version()}`
@@ -55,6 +55,6 @@ async def durums(event):
 **{LANG['OK']} ✅**
     """)
 
-CmdHelp('durum').add_command(
-    'durum', None, 'Eklenen Apiler ve sürümleri gösterir.'
+CmdHelp('hal').add_command(
+    'durum', None, 'Əlavə edilən Apilər ve sürümləri göstərər.'
 ).add()
