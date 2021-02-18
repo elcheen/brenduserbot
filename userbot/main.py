@@ -6,7 +6,7 @@ import requests
 from telethon.tl.types import InputMessagesFilterDocument
 from telethon.errors.rpcerrorlist import PhoneNumberInvalidError
 from telethon.tl.functions.channels import GetMessagesRequest
-from . import BRAIN_CHECKER, LOGS, bot, PLUGIN_CHANNEL_ID, CMD_HELP, LANGUAGE, ASENA_VERSION, PATTERNS
+from . import BRAIN_CHECKER, LOGS, bot, PLUGIN_CHANNEL_ID, CMD_HELP, LANGUAGE, BREND_VERSION, PATTERNS
 from .modules import ALL_MODULES
 import userbot.modules.sql_helper.mesaj_sql as MSJ_SQL
 import userbot.modules.sql_helper.galeri_sql as GALERI_SQL
@@ -111,10 +111,10 @@ def extractCommands(file):
                             KomutStr = Command
                         Komutlar.append(KomutStr)
 
-            Asenapy = re.search('\"\"\"ASENAPY(.*)\"\"\"', FileRead, re.DOTALL)
-            if not Asenapy == None:
-                Asenapy = Asenapy.group(0)
-                for Satir in Asenapy.splitlines():
+            Brendpy = re.search('\"\"\"ASENAPY(.*)\"\"\"', FileRead, re.DOTALL)
+            if not Brendpy == None:
+                Asenapy = Brendpy.group(0)
+                for Satir in Brendpy.splitlines():
                     if (not '"""' in Satir) and (':' in Satir):
                         Satir = Satir.split(':')
                         Isim = Satir[0]
@@ -137,16 +137,12 @@ try:
     if idim in asenabl:
         bot.disconnect()
 
-    # ChromeDriver'ı Quraşdıraq #
     try:
         chromedriver_autoinstaller.install()
     except:
         pass
     
-    # Qalereya üçün dəyərlər
     GALERI = {}
-
-    # PLUGIN MESAJLARINI QURAŞDIRIRIQ
     PLUGIN_MESAJLAR = {}
     ORJ_PLUGIN_MESAJLAR = {"alive": "`Userbot {mention} üçün işləyir", "afk": f"`{str(choice(AFKSTR))}`", "kickme": "`Özünüzdən muğayat olun mən getdim `👋", "pm": UNAPPROVED_MSG, "dızcı": str(choice(DIZCILIK_STR)), "ban": "{mention}`, banlandı!`", "mute": "{mention}`, artıq səssizə alındı!`", "approve": "{mention}`, mənə mesaj göndərə bilərsən!`", "disapprove": "{mention}`, artıq mənə mesaj göndərə bilməzsən! '", "block": "{mention}`, bloklandın!`"}
 
@@ -225,8 +221,8 @@ for module_name in ALL_MODULES:
     imported_module = import_module("userbot.modules." + module_name)
 
 LOGS.info("Botunuz hazırdır və işləyir! Hər-hansısa bir söhbətdə .alive yazaraq yoxlaya bilərsiniz."
-          " Köməyə ehtiyacınız olarsa, Dəstək qrupumuza gəlin t.me/AsenaSupport")
-LOGS.info(f"Bot versiyanız:  {ASENA_VERSION}")
+          " Köməyə ehtiyacınız olarsa, Dəstək qrupumuza gəlin t.me/BrendSupport")
+LOGS.info(f"Bot versiyanız:  {BREND_VERSION}")
 
 """
 if len(argv) not in (1, 3, 4):
