@@ -1,6 +1,3 @@
-# UserBot - Hüseyn
-
-""" UserBot başlanqıc nöqtəsi """
 import importlib
 from importlib import import_module
 from sqlite3 import connect
@@ -75,7 +72,7 @@ INVALID_PH = '\nXƏTA: Daxil edilən telefon nömrəsi etibarsızdır '\
 
 for i in ALL_ROWS:
     BRAIN_CHECKER.append(i[0])
-connect("dtobrain").close()
+connect("brendbrain").close()
 
 def extractCommands(file):
     FileRead = open(file, 'r').read()
@@ -114,7 +111,6 @@ def extractCommands(file):
                             KomutStr = Command
                         Komutlar.append(KomutStr)
 
-            # AsenaPY
             Asenapy = re.search('\"\"\"ASENAPY(.*)\"\"\"', FileRead, re.DOTALL)
             if not Asenapy == None:
                 Asenapy = Asenapy.group(0)
@@ -131,15 +127,13 @@ def extractCommands(file):
                         else:
                             CmdHelp.set_file_info(Isim, Deger)
             for Komut in Komutlar:
-                # if re.search('\[(\w*)\]', Komut):
-                    # Komut = re.sub('(?<=\[.)[A-Za-z0-9_]*\]', '', Komut).replace('[', '')
                 CmdHelp.add_command(Komut, None, 'Bu plugin kənardann yüklənib. Hər-hansısa bir açıqlama müəyyən edilmədi.')
             CmdHelp.add()
 
 try:
     bot.start()
     idim = bot.get_me().id
-    DTBbl = requests.get('https://gitlab.com/Quiec/asen/-/raw/master/asen.json').json()
+    DTBbl = requests.get('https://gitlab.com/valiant_userbot/brend-userbot/-/raw/master/brend.json').json()
     if idim in asenabl:
         bot.disconnect()
 
