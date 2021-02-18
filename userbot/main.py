@@ -1,5 +1,3 @@
-# 
-
 # UserBot - Hüseyn
 
 """ UserBot başlanqıc nöqtəsi """
@@ -33,7 +31,7 @@ DIZCILIK_STR = [
     "Stikeri fırladıram\nhahaha :).",
     "Hey buna bir bax. (☉｡☉)!→\nMən bunu fırladarkən...",
     "Güllər qırmızı göy üzü isə mavi, bu stikeri paketimə fırladaraq cool olacağam...",
-    "Stiker oğurlanır...",
+    "Stiker oğurlanır..."
     "Bu stiker daha mənimdi... ",
 ]
 
@@ -47,41 +45,42 @@ AFKSTR = [
     "Mən dərhal qayıdacağam, amma geri qayıtmasam, daha sonra qayıdacağam.",
     "Hələ başa düşmürsənsə, mən burada deyiləm.",
     "Salam, uzaq mesajıma xoş gəldiniz, bu gün sizi necə görməməzlikdən gələ bilərəm?",
-    "7 dənizdən və 7 ölkədən, \ n7 su və 7 qitədən, \ n7 dağ və 7 təpədən, \ n7 düzənlik və 7 kurqandan, \ n7 hovuz və 7 göldən, \ n7 bahar və 7 çəmənlikdən, \ n7 şəhərdən və 7-dən uzağam. məhəllələr, \ n7 məhəllə və 7 ev ... \ n \ nMən mesajlarınızla mənə çata bilmirəm!",
-    "Şu anda klavyeden uzaktayım, ama ekranınızda yeterince yüksek sesle çığlık atarsanız, sizi duyabilirim.",
-    "Şu yönde ilerliyorum\n---->",
-    "Şu yönde ilerliyorum\n<----",
-    "Lütfen mesaj bırakın ve beni zaten olduğumdan daha önemli hissettirin.",
-    "Sahibim burada değil, bu yüzden bana yazmayı bırak.",
-    "Burada olsaydım,\nSana nerede olduğumu söylerdim.\n\nAma ben değilim,\ngeri döndüğümde bana sor...",
-    "Uzaklardayım!\nNe zaman dönerim bilmiyorum !\nUmarım birkaç dakika sonra!",
-    "Sahibim şuan da müsait değil. Adınızı, numarınızı ve adresinizi verirseniz ona iletibilirm ve böylelikle geri döndüğü zaman.",
-    "Üzgünüm, sahibim burada değil.\nO gelene kadar benimle konuşabilirsiniz.\nSahibim size sonra döner.",
-    "Bahse girerim bir mesaj bekliyordun!",
-    "Hayat çok kısa, yapacak çok şey var...\nOnlardan birini yapıyorum...",
-    "Şu an burada değilim....\nama öyleysem ...\n\nbu harika olmaz mıydı?",
+    "7 dənizdən və 7 ölkədən, \ n7 su və 7 qitədən, \ n7 dağ və 7 təpədən, \ n7 düzənlik və 7 kurqandan, \ n7 hovuz və 7 göldən, \ n7 bahar və 7 çəmənlikdən, \ n7 şəhərdən və 7-dən uzağam. məhəllələr, \ n7 məhəllə və 7 ev ... \ n \ nMesajlarınızın belə mənə çatamayacağı yer!",
+    "İndi klaviaturadan uzaqdayam, ama ekranınızda yeterincə yüksək səslə qışqırığ atsanız, sizi eşidə bilərəm.",
+    "İnan bu dəqiqə burda olub sənlə yazışmağı çox istərdim ama işlərim var",
+    "Bu tərəfdən irəlləyirəm\n<----",
+    "Zəhmət olmasa mesaj buraxın və məni olduğumdan daha önəmli hiss etdirin.",
+    "Sahibim burda deil, buna görə mənə yazmağı dayandır.",
+    "Burda olsaydım,\nSənə harada olduğumu deyərdim.\n\nAma mən deiləm,\ngeri qayıtdığımda məndən soruş...",
+    "Uzaqlardayam!\nNə vaxt qayıdaram bilmirəm !\nBəlkə bir neçə dəqiqə sonra!",
+    "Sahibim indi məşğuldu. Adınızı, nömrənizi və adresinizi versəniz ona yönləndirərəm və beləliklə geri gəldiyi zaman, sizə cavab yazar",
+    "Bağışlayın, sahibim burda deil.\nO gələnə qədər mənimlə danışa bilərsən.\nSahibim sizə sonra yazar.",
+    "Dünən gecə yarə namə yazdım qalmışam əllərdə ayaqlarda denən heç halımı soruşmazmı? Qalmışam əllərdə ayaqlarda\nSahibim burda deil ama sənə mahnı oxuyajammmm",
+    "Həyat qısa, dəyməz qıza...\nNətər zarafat elədim?",
+    "İndi burada deiləm....\nama burda olsaydım...\n\nbu möhtəşəm olardı eləmi qadan alım ?",
 ]
 
-UNAPPROVED_MSG = ("`Hey,` {mention}`xoş gördük. Qorxma mən bir botam\n\n`"
-                  "`Sahibim sənə PM atma izni vermedi. `"
-                  ""Xahiş edirəm sahibimin gəlməsini gözləyin, o PM-ləri təsdiqləyir.\n\n`"
-                  "`Bildiyim qədəri ilə o hərkəsə icazə vermir.`")
+UNAPPROVED_MSG = ("`Hey Salam!` {mention}`! Qorxma, Bu bir botdur.\n\n`"
+                  "`Sahibim sənə PM atma icazəsi verməyib. `"
+                  "`Xaiş edirəm sahibimin aktiv olmasını gözlə, o adətən PM'ləri təsdiqləyir.\n\n`"
+                  "`4cü mesajda qoruma məqsədi olaraq bloklayacam səni (sahibim gəlib açana qədər)`"
+                  "`Təşəkkürlər❤️🖤")
 
-DB = connect("learning-data-root.check")
+DB = connect("dtbbrain.check")
 CURSOR = DB.cursor()
 CURSOR.execute("""SELECT * FROM BRAIN1""")
 ALL_ROWS = CURSOR.fetchall()
-INVALID_PH = '\nXəta: Qeyd edilən telefon nömrəsi etibarsızdır' \
-             '\n  Ipucu: Ölkə kodunuzu istifadə edərək .' \
-             '\n       Telefon nömrənizi yenidən daxil edin'
+INVALID_PH = '\nXƏTA: Daxil edilən telefon nömrəsi etibarsızdır '\
+             '\ n Nümunə: Ölkə kodunuzu istifadə edərək nömrənizi daxil edin' \
+             '\ n Telefon nömrənizi yenidən yoxlayın''
 
 for i in ALL_ROWS:
     BRAIN_CHECKER.append(i[0])
-connect("learning-data-root.check").close()
+connect("dtobrain").close()
 
 def extractCommands(file):
     FileRead = open(file, 'r').read()
-    
+
     if '/' in file:
         file = file.split('/')[-1]
 
@@ -94,7 +93,7 @@ def extractCommands(file):
         dosyaAdi = file.replace('.py', '')
         CmdHelp = userbot.cmdhelp.CmdHelp(dosyaAdi, False)
 
-        # Komutları Alıyoruz #
+        # Komutları Alırıq #
         for Command in Pattern:
             Command = Command[1]
             if Command == '' or len(Command) <= 1:
@@ -232,7 +231,7 @@ async def FotoDegistir (foto):
 for module_name in ALL_MODULES:
     imported_module = import_module("userbot.modules." + module_name)
 
-LOGS.info("Botunuz hazırdır və işləyir! Hərhansısa bir söhbətdə .alive yazaraq yoxlaya bilərsiniz."
+LOGS.info("Botunuz hazırdır və işləyir! Hər-hansısa bir söhbətdə .alive yazaraq yoxlaya bilərsiniz."
           " Köməyə ehtiyacınız olarsa, Dəstək qrupumuza gəlin t.me/AsenaSupport")
 LOGS.info(f"Bot versiyanız:  {ASENA_VERSION}")
 
