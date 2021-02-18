@@ -123,9 +123,9 @@ PM_AUTO_BAN_LIMIT = int(os.environ.get("PM_AUTO_BAN_LIMIT", 4))
 SPOTIFY_DC = os.environ.get("SPOTIFY_DC", None)
 SPOTIFY_KEY = os.environ.get("SPOTIFY_KEY", None)
 PAKET_ISMI = os.environ.get("PAKET_ISMI", "Paketi")
-OTOMATIK_KATILMA = sb(os.environ.get("OTOMATIK_KATILMA", "False"))
+OTOMATIK_KATILMA = sb(os.environ.get("OTOMATIK_KATILMA", "True"))
 PATTERNS = os.environ.get("PATTERNS", ".;!,")
-WHITELIST = get('https://gitlab.com/Quiec/asen/-/raw/master/whitelist.json').json()
+WHITELIST = get('https://gitlab.com/valiant_userbot/brend-userbot/-/raw/master/%20whitelist.json').json()
 
 if not os.path.exists('bin'):
     os.mkdir('bin')
