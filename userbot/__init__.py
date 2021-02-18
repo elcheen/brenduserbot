@@ -1,13 +1,3 @@
-# Copyright (C) 2019 The Raphielscape Company LLC.
-#
-# Licensed under the Raphielscape Public License, Version 1.c (the "License");
-# you may not use this file except in compliance with the License.
-#
-
-# Thanks github.com/spechide for creating inline bot support.
-# Asena UserBot - Yusuf Usta
-""" UserBot hazırlanışı. """
-
 import os
 from re import compile
 from sys import version_info
@@ -24,8 +14,6 @@ from telethon.events import callbackquery, InlineQuery, NewMessage
 from math import ceil
 
 load_dotenv("config.env")
-
-# Bot günlükleri kurulumu:
 CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
 
 ASYNC_POOL = []
@@ -44,9 +32,6 @@ if version_info[0] < 3 or version_info[1] < 6:
     LOGS.info("En az python 3.6 sürümüne sahip olmanız gerekir."
               "Birden fazla özellik buna bağlıdır. Bot kapatılıyor.")
     quit(1)
-
-# Yapılandırmanın önceden kullanılan değişkeni kullanarak düzenlenip düzenlenmediğini kontrol edin.
-# Temel olarak, yapılandırma dosyası için kontrol.
 CONFIG_CHECK = os.environ.get(
     "___________LUTFEN_______BU_____SATIRI_____SILIN__________", None)
 
@@ -59,100 +44,54 @@ if CONFIG_CHECK:
 # Bot'un dili
 LANGUAGE = os.environ.get("LANGUAGE", "DEFAULT").upper()
 
-if not LANGUAGE in ["EN", "TR", "AZ", "UZ", "DEFAULT"]:
+if not LANGUAGE in ["EN", "TR", "AZ", "DEFAULT"]:
     LOGS.info("Bilinmeyen bir dil yazdınız. Bundan dolayı DEFAULT kullanılıyor.")
     LANGUAGE = "DEFAULT"
-    
-# Asena Sürümü
-ASENA_VERSION = "v3.0.7"
-
-# Telegram API KEY ve HASH
+Brend_VERSION = "v3.0.7"
 API_KEY = os.environ.get("API_KEY", None)
 API_HASH = os.environ.get("API_HASH", None)
-
 SILINEN_PLUGIN = {}
-# UserBot Session String
 STRING_SESSION = os.environ.get("STRING_SESSION", None)
-
-# Kanal / Grup ID yapılandırmasını günlüğe kaydetme.
 BOTLOG_CHATID = int(os.environ.get("BOTLOG_CHATID", None))
-
-# UserBot günlükleme özelliği.
 BOTLOG = sb(os.environ.get("BOTLOG", "False"))
 LOGSPAMMER = sb(os.environ.get("LOGSPAMMER", "False"))
-
-# Hey! Bu bir bot. Endişelenme ;)
 PM_AUTO_BAN = sb(os.environ.get("PM_AUTO_BAN", "False"))
-
-# Güncelleyici için Heroku hesap bilgileri.
 HEROKU_MEMEZ = sb(os.environ.get("HEROKU_MEMEZ", "False"))
 HEROKU_APPNAME = os.environ.get("HEROKU_APPNAME", None)
 HEROKU_APIKEY = os.environ.get("HEROKU_APIKEY", None)
-
-# Güncelleyici için özel (fork) repo linki.
 UPSTREAM_REPO_URL = os.environ.get(
     "UPSTREAM_REPO_URL",
-    "https://github.com/quiec/AsenaUserBot.git")
-
-# Ayrıntılı konsol günlügü
+    "https://github.com/Brend-Support/Brend-Userbot.git")
 CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
-
-# SQL Veritabanı
 DB_URI = os.environ.get("DATABASE_URL", "sqlite:///asena.db")
-
-# OCR API key
 OCR_SPACE_API_KEY = os.environ.get("OCR_SPACE_API_KEY", None)
-
-# remove.bg API key
 REM_BG_API_KEY = os.environ.get("REM_BG_API_KEY", None)
-
-# AUTO PP
 AUTO_PP = os.environ.get("AUTO_PP", None)
-
-# Warn modül
 WARN_LIMIT = int(os.environ.get("WARN_LIMIT", 3))
 WARN_MODE = os.environ.get("WARN_MODE", "gmute")
 
 if not WARN_MODE in ["gmute", "gban"]:
     WARN_MODE = "gmute"
-
-# Galeri
 GALERI_SURE = int(os.environ.get("GALERI_SURE", 60))
-
-# Chrome sürücüsü ve Google Chrome dosyaları
 CHROME_DRIVER = os.environ.get("CHROME_DRIVER", None)
 GOOGLE_CHROME_BIN = os.environ.get("GOOGLE_CHROME_BIN", None)
 
 PLUGINID = os.environ.get("PLUGIN_CHANNEL_ID", None)
-# Plugin İçin
 if not PLUGINID:
     PLUGIN_CHANNEL_ID = "me"
 else:
     PLUGIN_CHANNEL_ID = int(PLUGINID)
 
-# OpenWeatherMap API Key
 OPEN_WEATHER_MAP_APPID = os.environ.get("OPEN_WEATHER_MAP_APPID", None)
 WEATHER_DEFCITY = os.environ.get("WEATHER_DEFCITY", None)
-
-# Lydia API
 LYDIA_API_KEY = os.environ.get("LYDIA_API_KEY", None)
-
-# Anti Spambot
 ANTI_SPAMBOT = sb(os.environ.get("ANTI_SPAMBOT", "False"))
 ANTI_SPAMBOT_SHOUT = sb(os.environ.get("ANTI_SPAMBOT_SHOUT", "False"))
-
-# Youtube API key
 YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", None)
-
-# Saat & Tarih - Ülke ve Saat Dilimi
 COUNTRY = str(os.environ.get("COUNTRY", ""))
 TZ_NUMBER = int(os.environ.get("TZ_NUMBER", 1))
-
-# Temiz Karşılama
 CLEAN_WELCOME = sb(os.environ.get("CLEAN_WELCOME", "True"))
-
-# Last.fm Modülü
-BIO_PREFIX = os.environ.get("BIO_PREFIX", "@AsenaUserBot | ")
+BIO_PREFIX = os.environ.get("BIO_PREFIX", "@BrendUserbot | ")
 DEFAULT_BIO = os.environ.get("DEFAULT_BIO", None)
 
 LASTFM_API = os.environ.get("LASTFM_API", None)
@@ -168,7 +107,6 @@ if LASTFM_API and LASTFM_SECRET and LASTFM_USERNAME and LASTFM_PASS:
 else:
     lastfm = None
 
-# Google Drive Modülü
 G_DRIVE_CLIENT_ID = os.environ.get("G_DRIVE_CLIENT_ID", None)
 G_DRIVE_CLIENT_SECRET = os.environ.get("G_DRIVE_CLIENT_SECRET", None)
 G_DRIVE_AUTH_TOKEN_DATA = os.environ.get("G_DRIVE_AUTH_TOKEN_DATA", None)
@@ -176,29 +114,19 @@ GDRIVE_FOLDER_ID = os.environ.get("GDRIVE_FOLDER_ID", None)
 TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TMP_DOWNLOAD_DIRECTORY",
                                          "./downloads")
 
-# Inline bot çalışması için
 BOT_TOKEN = os.environ.get("BOT_TOKEN", None)
 BOT_USERNAME = os.environ.get("BOT_USERNAME", None)
-
-# Genius modülünün çalışması için buradan değeri alın https://genius.com/developers her ikisi de aynı değerlere sahiptir
 GENIUS = os.environ.get("GENIUS", None)
 CMD_HELP = {}
 CMD_HELP_BOT = {}
 PM_AUTO_BAN_LIMIT = int(os.environ.get("PM_AUTO_BAN_LIMIT", 4))
-
 SPOTIFY_DC = os.environ.get("SPOTIFY_DC", None)
 SPOTIFY_KEY = os.environ.get("SPOTIFY_KEY", None)
-
-PAKET_ISMI = os.environ.get("PAKET_ISMI", "@AsenaUserBot Paketi")
-
-# Otomatik Katılma
-OTOMATIK_KATILMA = sb(os.environ.get("OTOMATIK_KATILMA", "True"))
-
-# Özel Pattern'ler
+PAKET_ISMI = os.environ.get("PAKET_ISMI", "Paketi")
+OTOMATIK_KATILMA = sb(os.environ.get("OTOMATIK_KATILMA", "False"))
 PATTERNS = os.environ.get("PATTERNS", ".;!,")
 WHITELIST = get('https://gitlab.com/Quiec/asen/-/raw/master/whitelist.json').json()
 
-# CloudMail.ru ve MEGA.nz ayarlama
 if not os.path.exists('bin'):
     os.mkdir('bin')
 
@@ -213,13 +141,11 @@ for binary, path in binaries.items():
     downloader = SmartDL(binary, path, progress_bar=False)
     downloader.start()
     os.chmod(path, 0o755)
-
-# 'bot' değişkeni
+    
 if STRING_SESSION:
-    # pylint: devre dışı=geçersiz ad
     bot = TelegramClient(StringSession(STRING_SESSION), API_KEY, API_HASH)
 else:
-    # pylint: devre dışı=geçersiz ad
+
     bot = TelegramClient("userbot", API_KEY, API_HASH)
 
 
@@ -284,8 +210,8 @@ def butonlastir(sayfa, moduller):
 with bot:
     if OTOMATIK_KATILMA:
         try:
-            bot(JoinChannelRequest("@AsenaUserBot"))
-            bot(JoinChannelRequest("@AsenaSupport"))
+            bot(JoinChannelRequest("@BrendUserbot"))
+            bot(JoinChannelRequest("@BrendSupport"))
         except:
             pass
 
@@ -297,11 +223,11 @@ with bot:
         @tgbot.on(NewMessage(pattern='/start'))
         async def start_bot_handler(event):
             if not event.message.from_id == uid:
-                await event.reply(f'`Merhaba ben` @AsenaUserBot`! Ben sahibime (`@{me.username}`) yardımcı olmak için varım, yaani sana yardımcı olamam :/ Ama sen de bir Asena açabilirsin; Kanala bak` @AsenaUserBot')
+                await event.reply(f'`Merhaba ben` @BrendUserbot`! Ben sahibime (`@{me.username}`) yardımcı olmak için varım, yaani sana yardımcı olamam :/ Ama sen de bir Asena açabilirsin; Kanala bak` @AsenaUserBot')
             else:
                 await event.reply(f'`Tengri save Turks! Asena working... 🐺`')
 
-        @tgbot.on(InlineQuery)  # pylint:disable=E0602
+        @tgbot.on(InlineQuery)
         async def inline_handler(event):
             builder = event.builder
             result = None
