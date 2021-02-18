@@ -1,13 +1,13 @@
-# Copyright (C) 2019 The Raphielscape Company LLC.
+# Copyright (C) 2021 The Raphielscape Company LLC.
 #
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
 #
 
-# Asena UserBot - Yusuf Usta
+# Asena UserBot - ᴇʟçɪɴ ¦ 🇯🇵
 
 
-""" Dogbin ile etkileşim için komutlar içeren UserBot modülü(https://del.dog)"""
+""" Dogbin ilə əlaqə üçün əmrlər təşkil edən UserBot modulu(https://del.dog)"""
 
 from requests import get, post, exceptions
 import os
@@ -26,7 +26,7 @@ LANG = get_value("dogbin")
 
 @register(outgoing=True, pattern=r"^.paste(?: |$)([\s\S]*)")
 async def paste(pstl):
-    """ .paste komutu metni doğrudan dogbine yapıştırır """
+    """ .paste əmri mətni birbaşa dogbinə yapışdırar """
     dogbin_final_url = ""
     match = pstl.pattern_match.group(1).strip()
     reply_id = pstl.reply_to_msg_id
@@ -78,13 +78,13 @@ async def paste(pstl):
     if BOTLOG:
         await pstl.client.send_message(
             BOTLOG_CHATID,
-            f"Dogbine metin yapıştırma başarıyla yürütüldü",
+            f"Dogbinə mətn yapışdırma uğurla edildi",
         )
 
 
 @register(outgoing=True, pattern="^.getpaste(?: |$)(.*)")
 async def get_dogbin_content(dog_url):
-    """ .getpaste komutu dogbin url içeriğini aktarır """
+    """ .getpaste əmri dogbin url`sni gətirər """
     textx = await dog_url.get_reply_message()
     message = dog_url.pattern_match.group(1)
     await dog_url.edit(LANG['DATA_CHECKING'])
@@ -132,7 +132,7 @@ async def get_dogbin_content(dog_url):
         )
 
 CmdHelp('dogbin').add_command(
-    'paste', '<metin/yanıtlama>', 'Dogbin kullanarak yapıştırılmış veya kısaltılmış url oluşturma (https://del.dog/)'
+    'paste', '<mətn/cavablama>', 'Dogbin işlədilərk yapışdırılmış və ya qısaldılmış url düzəltmə (https://del.dog/)'
 ).add_command(
-    'getpaste', None, 'Dogbin url içeriğini metne aktarır (https://del.dog/)'
+    'getpaste', None, 'Dogbin url içəriyini mətnə əlavə edər (https://del.dog/)'
 ).add()
