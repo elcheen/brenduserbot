@@ -1,16 +1,6 @@
-# Copyright (C) 2020 Yusuf Usta.
-#
-# Licensed under the GPL-3.0 License;
-# you may not use this file except in compliance with the License.
-#
-
-# Asena UserBot - Yusuf Usta
 from userbot import PATTERNS, CMD_HELP, CMD_HELP_BOT
 
 class CmdHelp:
-    """
-    Komut yardımlarını daha iyi üretmek için yazdığım sınıf.
-    """
 
     FILE = ""
     ORIGINAL_FILE = ""
@@ -39,9 +29,6 @@ class CmdHelp:
         return self
         
     def add_command(self, command : str, params = None, usage: str = '', example = None):
-        """
-        Komut ekler.
-        """
         
         self.COMMANDS[command] = {'command': command, 'params': params, 'usage': usage, 'example': example}
         return self
@@ -55,51 +42,45 @@ class CmdHelp:
         return self
 
     def get_result(self):
-        """
-        Sonuç getirir.
-        """
 
-        result = f"**📗 Dosya:** `{self.FILE}`\n"
+        result = f"**📗 Fayl:** `{self.FILE}`\n"
         if self.WARNING == '' and self.INFO == '':
-            result += f"**⬇️ Official:** {'✅' if self.IS_OFFICIAL else '❌'}\n\n"
+            result += f"**⬇️ Rəsmi:** {'✅' if self.IS_OFFICIAL else '❌'}\n\n"
         else:
-            result += f"**⬇️ Official:** {'✅' if self.IS_OFFICIAL else '❌'}\n"
+            result += f"**⬇️ Rəsmi:** {'✅' if self.IS_OFFICIAL else '❌'}\n"
             
             if self.INFO == '':
                 if not self.WARNING == '':
-                    result += f"**⚠️ Uyarı:** {self.WARNING}\n\n"
+                    result += f"**⚠️ Diqqət:** {self.WARNING}\n\n"
             else:
                 if not self.WARNING == '':
-                    result += f"**⚠️ Uyarı:** {self.WARNING}\n"
+                    result += f"**⚠️ Diqqət:** {self.WARNING}\n"
                 result += f"**ℹ️ Info:** {self.INFO}\n\n"
                      
         for command in self.COMMANDS:
             command = self.COMMANDS[command]
             if command['params'] == None:
-                result += f"**🛠 Komut:** `{PATTERNS[:1]}{command['command']}`\n"
+                result += f"**🛠 Əmr:** `{PATTERNS[:1]}{command['command']}`\n"
             else:
-                result += f"**🛠 Komut:** `{PATTERNS[:1]}{command['command']} {command['params']}`\n"
+                result += f"**🛠 Əmr:** `{PATTERNS[:1]}{command['command']} {command['params']}`\n"
                 
             if command['example'] == None:
-                result += f"**💬 Açıklama:** `{command['usage']}`\n\n"
+                result += f"**💬 İzahat:** `{command['usage']}`\n\n"
             else:
-                result += f"**💬 Açıklama:** `{command['usage']}`\n"
-                result += f"**⌨️ Örnek:** `{PATTERNS[:1]}{command['example']}`\n\n"
+                result += f"**💬 İzahat:** `{command['usage']}`\n"
+                result += f"**⌨️ Nümunə:** `{PATTERNS[:1]}{command['example']}`\n\n"
         return result
 
     def add(self):
-        """
-        Direkt olarak CMD_HELP ekler.
-        """
         CMD_HELP_BOT[self.FILE] = {'info': {'official': self.IS_OFFICIAL, 'warning': self.WARNING, 'info': self.INFO}, 'commands': self.COMMANDS}
         CMD_HELP[self.FILE] = self.get_result()
         return True
     
     def getText(self, text : str):
         if text == 'REPLY_OR_USERNAME':
-            return '<kullanıcı adı> <kullanıcı adı/yanıtlama>'
+            return '<istifadəçi adı> <istifadəçi adı/cavablama>'
         elif text == 'OR':
-            return 'veya'
+            return 'və ya'
         elif text == 'USERNAMES':
-            return '<kullanıcı ad(lar)ı>'
+            return '<istifadəçi ad(lar)ı>'
         
