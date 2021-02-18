@@ -30,7 +30,7 @@ async def dil(event):
                 return await event.edit("`Xahiş olunur düzgün` **BrendJSON** `faylı verin!`")
 
             try:
-                fayl = loads(open(dosya, "r").read())
+                fayl = loads(open(fayl, "r").read())
             except JSONDecodeError:
                 return await event.edit("`Xahiş olunur düzgün` **BrendJSON** `faylı verin`")
 
