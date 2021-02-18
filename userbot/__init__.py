@@ -63,7 +63,7 @@ UPSTREAM_REPO_URL = os.environ.get(
     "UPSTREAM_REPO_URL",
     "https://github.com/Brend-Support/Brend-Userbot.git")
 CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
-DB_URI = os.environ.get("DATABASE_URL", "sqlite:///asena.db")
+DB_URI = os.environ.get("DATABASE_URL", "sqlite:///brend.db")
 OCR_SPACE_API_KEY = os.environ.get("OCR_SPACE_API_KEY", None)
 REM_BG_API_KEY = os.environ.get("REM_BG_API_KEY", None)
 AUTO_PP = os.environ.get("AUTO_PP", None)
