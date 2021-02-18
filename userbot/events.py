@@ -83,14 +83,14 @@ def register(**args):
                     ftext += "--------USERBOT XƏTA HİSSƏSİ--------\n"
                     ftext += "\nTarix: " + date
                     ftext += "\nQrup IDsi: " + str(check.chat_id)
-                    ftext += "\nGöndərən şəxsin IDsi: " + str(check.sender_id)
-                    ftext += "\n\nXəta Tətikləyicisi:\n"
+                    ftext += "\nGöndərən istifadəçinin IDsi: " + str(check.sender_id)
+                    ftext += "\n\nHadisə səbəbi:\n"
                     ftext += str(check.text)
                     ftext += "\n\nGeri izləmə məlumatı:\n"
                     ftext += str(format_exc())
                     ftext += "\n\nXəta mətni:\n"
                     ftext += str(sys.exc_info()[1])
-                    ftext += "\n\n--------USERBOT XƏTA HİSSƏSİNİN BİTİŞİ--------"
+                    ftext += "\n\n--------USERBOT XƏTA HİSSƏSİNİN SONU--------"
 
                     command = "git log --pretty=format:\"%an: %s\" -10"
 
