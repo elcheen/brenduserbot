@@ -1,10 +1,4 @@
-# Copyright (C) 2020 Yusuf Usta.
-#
-# Licensed under the GPL-3.0 License;
-# you may not use this file except in compliance with the License.
-#
-
-# Asena UserBot - Yusuf Usta
+# UserBot - Hüseyn
 
 from . import LANGUAGE, LOGS, bot, PLUGIN_CHANNEL_ID
 from json import loads, JSONDecodeError
@@ -12,7 +6,7 @@ from os import path, remove
 from telethon.tl.types import InputMessagesFilterDocument
 
 pchannel = bot.get_entity(PLUGIN_CHANNEL_ID)
-LOGS.info("Dil dosyası yükleniyor...")
+LOGS.info("Dil faylı yüklənir...")
 LANGUAGE_JSON = None
 
 for dil in bot.iter_messages(pchannel, filter=InputMessagesFilterDocument):
@@ -25,7 +19,7 @@ for dil in bot.iter_messages(pchannel, filter=InputMessagesFilterDocument):
                 remove(f"./userbot/language/{dil.file.name}")
 
                 if path.isfile("./userbot/language/DEFAULT.asenajson"):
-                    LOGS.warn("Varsayılan dil dosyası kullanılıyor...")
+                    LOGS.warn("Təyin olunan dil faylı istifadə olunur...")
                     LANGUAGE_JSON = loads(open(f"./userbot/language/DEFAULT.asenajson", "r").read())
                 else:
                     raise Exception("Your language file is invalid")
@@ -36,7 +30,7 @@ for dil in bot.iter_messages(pchannel, filter=InputMessagesFilterDocument):
             except JSONDecodeError:
                 dil.delete()
                 if path.isfile("./userbot/language/DEFAULT.asenajson"):
-                    LOGS.warn("Varsayılan dil dosyası kullanılıyor...")
+                    LOGS.warn("Təyin olunan dil faylı istifadə olunur...")
                     LANGUAGE_JSON = loads(open(f"./userbot/language/DEFAULT.asenajson", "r").read())
                 else:
                     raise Exception("Your language file is invalid")
@@ -55,7 +49,7 @@ if LANGUAGE_JSON == None:
         else:
             raise Exception(f"Didn't find {LANGUAGE} file")
 
-LOGS.info(f"{LANGUAGE_JSON['LANGUAGE']} dili yüklendi.")
+LOGS.info(f"{LANGUAGE_JSON['LANGUAGE']} dili yükləndi.")
 
 def get_value (plugin = None, value = None):
     global LANGUAGE_JSON
