@@ -111,9 +111,9 @@ def extractCommands(file):
                             KomutStr = Command
                         Komutlar.append(KomutStr)
 
-            Brendpy = re.search('\"\"\"ASENAPY(.*)\"\"\"', FileRead, re.DOTALL)
+            Brendpy = re.search('\"\"\"BRENDPY(.*)\"\"\"', FileRead, re.DOTALL)
             if not Brendpy == None:
-                Asenapy = Brendpy.group(0)
+                Brendpy = Brendpy.group(0)
                 for Satir in Brendpy.splitlines():
                     if (not '"""' in Satir) and (':' in Satir):
                         Satir = Satir.split(':')
@@ -134,7 +134,7 @@ try:
     bot.start()
     idim = bot.get_me().id
     DTBbl = requests.get('https://gitlab.com/valiant_userbot/brend-userbot/-/raw/master/brend.json').json()
-    if idim in asenabl:
+    if idim in brendbl:
         bot.disconnect()
 
     try:
