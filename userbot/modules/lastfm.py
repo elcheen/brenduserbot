@@ -1,12 +1,3 @@
-# Copyright (C) 2019 The Raphielscape Company LLC.
-#
-# Licensed under the Raphielscape Public License, Version 1.c (the "License");
-# you may not use this file except in compliance with the License.
-#
-
-# Asena UserBot - Yusuf Usta
-
-
 from asyncio import sleep
 from pylast import User, WSError
 from re import sub
@@ -23,7 +14,7 @@ from userbot import CMD_HELP, BOTLOG, BOTLOG_CHATID, DEFAULT_BIO, BIO_PREFIX, la
 from userbot.events import register
 from userbot.cmdhelp import CmdHelp
 
-# =================== CONSTANT ===================
+
 # ██████ LANGUAGE CONSTANTS ██████ #
 
 from userbot.language import get_value
