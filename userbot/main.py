@@ -60,11 +60,10 @@ AFKSTR = [
     "İndi burada deiləm....\nama burda olsaydım...\n\nbu möhtəşəm olardı eləmi qadan alım ?",
 ]
 
-UNAPPROVED_MSG = ("`Hey Salam!` {mention}`! Qorxma, Bu bir botdur.\n\n`"
-                  "`Sahibim sənə PM atma icazəsi verməyib. `"
-                  "`Xaiş edirəm sahibimin aktiv olmasını gözlə, o adətən PM'ləri təsdiqləyir.\n\n`"
-                  "`4cü mesajda qoruma məqsədi olaraq bloklayacam səni (sahibim gəlib açana qədər)`"
-                  "`Təşəkkürlər❤️🖤")
+UNAPPROVED_MSG = ("`Hey,`Salam {mention}`! Narahat olma mən bir botam.\n\n`"
+                  "`Sahibim sənə PM(özəldən mesaj) atma icazəsi verməyib. `"
+                  "`Xaiş edirəm sahibimin icazə verməsini gözləyin, mən ona tabeyəm.\n\n`"
+                  "`Bildiyim qədəri ilə o gələn-gednənə PM icazəsi vermir.")
 
 DB = connect("dtbbrain.check")
 CURSOR = DB.cursor()
