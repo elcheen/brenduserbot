@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# Asena UserBot - Yusuf Usta
+# Asena UserBot - ᴇʟçɪɴ ¦ 🇯🇵 ⁪⁬⁮⁮⁮⁮ 
 
 
 import asyncio
@@ -26,25 +26,24 @@ import httplib2
 from userbot.modules.upload_download import progress, humanbytes
 from userbot.cmdhelp import CmdHelp
 
-# Json dosyasının yolu, script ile aynı dizinde bulunmalıdır.
 G_DRIVE_TOKEN_FILE = "./auth_token.txt"
-# API konsolundan kişisel bilgilerinizi kopyalar
+
 CLIENT_ID = G_DRIVE_CLIENT_ID
 CLIENT_SECRET = G_DRIVE_CLIENT_SECRET
-# Mevcut alan tüm alanları kontrol eder: https://developers.google.com/drive/scopes
+
 OAUTH_SCOPE = "https://www.googleapis.com/auth/drive.file"
-# URI'yi yüklü uygulamalar için yönlendirir, olduğu gibi bırakılabilir.
+
 REDIRECT_URI = "urn:ietf:wg:oauth:2.0:oob"
-# Yüklenecek klasör IDsini ayarlamaya yarayan evrensel değer
+
 parent_id = GDRIVE_FOLDER_ID
-# Dizinlerin mimeType değerini belirten evrensel değer
+
 G_DRIVE_DIR_MIME_TYPE = "application/vnd.google-apps.folder"
 
 
 @register(pattern=r"^.gdrive(?: |$)(.*)", outgoing=True)
 async def gdrive_upload_function(dryb):
-    """ .gdrive komutu dosyalarınızı Google Drive'a uploadlar. """
-    await dryb.edit("İşleniyor ...")
+    """ .gdrive əmri faylınızı Google Drive'a yükləyər. """
+    await dryb.edit("İşlənir ...")
     input_str = dryb.pattern_match.group(1)
     if CLIENT_ID is None or CLIENT_SECRET is None:
         return
@@ -98,7 +97,7 @@ async def gdrive_upload_function(dryb):
                 pass
         if downloader.isSuccessful():
             await dryb.edit(
-                "`{}` dizinine indirme başarılı. \nGoogle Drive'a yükleme başlatılıyor.."
+                "`{}` yükləmə uğurludur. \nGoogle Drive'a yükləmə başladılır.."
                 .format(downloaded_file_name))
             required_file_name = downloaded_file_name
         else:
@@ -108,11 +107,11 @@ async def gdrive_upload_function(dryb):
         if os.path.exists(input_str):
             required_file_name = input_str
             await dryb.edit(
-                "`{}` dosyası sunucuda bulundu. Google Drive'a yükleme başlatılıyor.."
+                "`{}` faylı server`də tapıldı. Google Drive'a yükləmə başlanır.."
                 .format(input_str))
         else:
             await dryb.edit(
-                "Sunucuda dosya bulunamadı. Lütfen doğru dosya konumunu belirtin.")
+                "Serverdə fayl tapılmadı. Xahiş edirəm düzgün fayl əmri ver.")
             return False
     elif dryb.reply_to_msg_id:
         try:
@@ -133,15 +132,15 @@ async def gdrive_upload_function(dryb):
         if G_DRIVE_AUTH_TOKEN_DATA is not None:
             with open(G_DRIVE_TOKEN_FILE, "w") as t_file:
                 t_file.write(G_DRIVE_AUTH_TOKEN_DATA)
-        # Token dosyasının olup olmadığını kontrol eder, eğer yoksa yetkilendirme kodu ile oluşturur.
+        
         if not os.path.isfile(G_DRIVE_TOKEN_FILE):
             storage = await create_token_file(G_DRIVE_TOKEN_FILE, dryb)
             http = authorize(G_DRIVE_TOKEN_FILE, storage)
-        # Yetkilendirir, dosya parametrelerini edinir, dosyayı uploadlar ve URL'yi indirme için paylaşır.
+        
         http = authorize(G_DRIVE_TOKEN_FILE, None)
         file_name, mime_type = file_ops(required_file_name)
-        # required_file_name tam dosya yoluna sahiptir.
-        # Bazen API başlangıç URI'sini geri alırken hatayla karşılaşır.
+        
+ 
         try:
             g_drive_link = await upload_file(http, required_file_name,
                                              file_name, mime_type, dryb,
@@ -156,48 +155,48 @@ async def gdrive_upload_function(dryb):
 
 @register(pattern=r"^.ggd(?: |$)(.*)", outgoing=True)
 async def upload_dir_to_gdrive(event):
-    await event.edit("İşleniyor ...")
+    await event.edit("İşlənir ...")
     if CLIENT_ID is None or CLIENT_SECRET is None:
         return
     input_str = event.pattern_match.group(1)
     if os.path.isdir(input_str):
-        # Yapılacaklar: Gereksiz kodlar kaldırılacak.
+        #
         if G_DRIVE_AUTH_TOKEN_DATA is not None:
             with open(G_DRIVE_TOKEN_FILE, "w") as t_file:
                 t_file.write(G_DRIVE_AUTH_TOKEN_DATA)
-        # Token dosyasının olup olmadığını kontrol eder, eğer yoksa yetkilendirme kodunu isteyerek oluşturur.
+        
         storage = None
         if not os.path.isfile(G_DRIVE_TOKEN_FILE):
             storage = await create_token_file(G_DRIVE_TOKEN_FILE, event)
         http = authorize(G_DRIVE_TOKEN_FILE, storage)
-        # Yetkilendirir, dosya parametrelerini edinir, dosyayı uploadlar ve URL'yi indirme için paylaşır.
-        # Öncelikle alt dizin oluşturur.
+        
+       
         dir_id = await create_directory(
             http, os.path.basename(os.path.abspath(input_str)), parent_id)
         await DoTeskWithDir(http, input_str, event, dir_id)
         dir_link = "https://drive.google.com/folderview?id={}".format(dir_id)
-        await event.edit(f"Google Drive bağlantın [burada]({dir_link})")
+        await event.edit(f"Google Drive adresin [burda]({dir_link})")
     else:
-        await event.edit(f"{input_str} dizini bulunamadı.")
+        await event.edit(f"{input_str} tərzi tapılmadı.")
 
 
 @register(pattern=r"^.list(?: |$)(.*)", outgoing=True)
 async def gdrive_search_list(event):
-    await event.edit("İşleniyor ...")
+    await event.edit("İşlənir ...")
     if CLIENT_ID is None or CLIENT_SECRET is None:
         return
     input_str = event.pattern_match.group(1).strip()
-    # Yapılacaklar: Gereksiz kodlar kaldırılacak.
+    
     if G_DRIVE_AUTH_TOKEN_DATA is not None:
         with open(G_DRIVE_TOKEN_FILE, "w") as t_file:
             t_file.write(G_DRIVE_AUTH_TOKEN_DATA)
-    # Token dosyasının olup olmadığını kontrol eder, eğer yoksa yetkilendirme kodunu isteyerek oluşturur.
+    
     storage = None
     if not os.path.isfile(G_DRIVE_TOKEN_FILE):
         storage = await create_token_file(G_DRIVE_TOKEN_FILE, event)
     http = authorize(G_DRIVE_TOKEN_FILE, storage)
-    # Yetkilendirir, dosya parametrelerini edinir, dosyayı uploadlar ve URL'yi indirme için paylaşır.
-    await event.edit(f"Google Drive'ınızda {input_str} aranıyor...")
+    
+    await event.edit(f"Google Drive'inizdə {input_str} axtarılır...")
     gsearch_results = await gdrive_search(http, input_str)
     await event.edit(gsearch_results, link_preview=False)
 
@@ -207,27 +206,27 @@ async def gdrive_search_list(event):
     r"^.gsetf https?://drive\.google\.com/drive/u/\d/folders/([-\w]{25,})",
     outgoing=True)
 async def download(set):
-    """ .gsetf komutu dizini belirtmenizi sağlar. """
-    await set.edit("İşleniyor ...")
+    """ .gsetf əmri tərzini tapmağı təmin edər. """
+    await set.edit("İşlənir ...")
     input_str = set.pattern_match.group(1)
     if input_str:
         parent_id = input_str
         await set.edit(
-            "Özel Klasör ID'si başarıyla ayarlandı. Sonraki uploadlar şuraya uploadlanacak: {parent_id} (`.gsetclear` komutunu vermediğiniz sürece)"
+            "Özəl bölmə ID'si uğurlu şəkildə düzənləndi. Sonrakı yükləmələr yüklənəcək: {parent_id} (`.gsetclear` əmrini verməsəz)"
         )
         await set.delete()
     else:
         await set.edit(
-            ".gdrivesp <GDrive Klasörü> komutuyla yeni dosyaların uploadlanacağı klasörü belirtebilirsiniz."
+            ".gdrivesp <GDrive bölməsi> əmri ilə yeni faylların yüklənəcəyi bölməni aydınlaşdıra bilərsiniz."
         )
 
 
 @register(pattern="^.gsetclear$", outgoing=True)
 async def download(gclr):
-    """ .gsetclear komutu özel dizini kaldırmanıza yarar. """
+    """ .gsetclear əmri özəl tərzi qaldırmağa yarayar. """
     await gclr.reply("İşleniyor ...")
     parent_id = GDRIVE_FOLDER_ID
-    await gclr.edit("Özel Klasör ID'si başarıyla temizlendi.")
+    await gclr.edit("Özəl bölmə ID'si uğurlu şəkildə temizləndi.")
 
 
 @register(pattern="^.gfolder$", outgoing=True)
@@ -235,7 +234,7 @@ async def show_current_gdrove_folder(event):
     if parent_id:
         folder_link = f"https://drive.google.com/drive/folders/" + parent_id
         await event.edit(
-            f"UserBot'um dosyaları [şuraya]({folder_link}) uploadlıyor.")
+            f"UserBot'un fayllarını [bura]({folder_link}) yükləyər.")
     else:
         await event.edit(
             f"UserBot'um dosyaları Google Drive'ın kök dizinine uploadlıyor.\
