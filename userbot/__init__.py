@@ -20,32 +20,31 @@ ASYNC_POOL = []
 
 if CONSOLE_LOGGER_VERBOSE:
     basicConfig(
-        format="%(asctime)s - @AsenaUserBot - %(levelname)s - %(message)s",
+        format="%(asctime)s - @BrendUserBot - %(levelname)s - %(message)s",
         level=DEBUG,
     )
 else:
-    basicConfig(format="%(asctime)s - @AsenaUserBot - %(levelname)s - %(message)s",
+    basicConfig(format="%(asctime)s - @BrendUserBot - %(levelname)s - %(message)s",
                 level=INFO)
 LOGS = getLogger(__name__)
 
 if version_info[0] < 3 or version_info[1] < 6:
-    LOGS.info("En az python 3.6 sürümüne sahip olmanız gerekir."
-              "Birden fazla özellik buna bağlıdır. Bot kapatılıyor.")
+    LOGS.info("ən az python 3.6 versiyasına sahib olmağınız lazımdır."
+              "Birden çoz özəllik buna bağlıdır. Bot Bağlanır.")
     quit(1)
 CONFIG_CHECK = os.environ.get(
     "___________LUTFEN_______BU_____SATIRI_____SILIN__________", None)
 
 if CONFIG_CHECK:
     LOGS.info(
-        "Lütfen ilk hashtag'de belirtilen satırı config.env dosyasından kaldırın"
+        "Xaiş edirik ilk hashtag'da göstərilən sətri config.env faylından silin"
     )
     quit(1)
 
-# Bot'un dili
 LANGUAGE = os.environ.get("LANGUAGE", "DEFAULT").upper()
 
 if not LANGUAGE in ["EN", "TR", "AZ", "DEFAULT"]:
-    LOGS.info("Bilinmeyen bir dil yazdınız. Bundan dolayı DEFAULT kullanılıyor.")
+    LOGS.info("Naməlum bir dil yazdınız. Buna görə DEFAULT istifadə olunur.")
     LANGUAGE = "DEFAULT"
 Brend_VERSION = "v3.0.7"
 API_KEY = os.environ.get("API_KEY", None)
@@ -152,7 +151,7 @@ else:
 if os.path.exists("learning-data-root.check"):
     os.remove("learning-data-root.check")
 else:
-    LOGS.info("Braincheck dosyası yok, getiriliyor...")
+    LOGS.info("Braincheck sənədi yoxdur, hazırlanır...")
 
 URL = 'https://raw.githubusercontent.com/quiec/databasescape/master/learning-data-root.check'
 with open('learning-data-root.check', 'wb') as load:
@@ -161,12 +160,12 @@ with open('learning-data-root.check', 'wb') as load:
 async def check_botlog_chatid():
     if not BOTLOG_CHATID and LOGSPAMMER:
         LOGS.info(
-            "Özel hata günlüğünün çalışması için yapılandırmadan BOTLOG_CHATID değişkenini ayarlamanız gerekir.")
+            "Xüsusi xəta jurnalının işləməsi üçün BOTLOG_CHATID dəyişənini təyin etməlisiniz.")
         quit(1)
 
     elif not BOTLOG_CHATID and BOTLOG:
         LOGS.info(
-            "Günlüğe kaydetme özelliğinin çalışması için yapılandırmadan BOTLOG_CHATID değişkenini ayarlamanız gerekir.")
+            "Giriş funksiyasının işləməsi üçün BOTLOG_CHATID dəyişənini təyin etməlisiniz.")
         quit(1)
 
     elif not BOTLOG or not LOGSPAMMER:
@@ -175,8 +174,8 @@ async def check_botlog_chatid():
     entity = await bot.get_entity(BOTLOG_CHATID)
     if entity.default_banned_rights.send_messages:
         LOGS.info(
-            "Hesabınızın BOTLOG_CHATID grubuna mesaj gönderme yetkisi yoktur. "
-            "Grup ID'sini doğru yazıp yazmadığınızı kontrol edin.")
+            "Hesabınızın BOTLOG_CHATID qrupuna mesaj göndərmə səlahiyyəti yoxdur. "
+            "Qrup ID'sini doğru yazıb yazmadığınızı yoxlayın.")
         quit(1)
         
 if not BOT_TOKEN == None:
@@ -201,10 +200,10 @@ def butonlastir(sayfa, moduller):
     butonlar = []
     for pairs in pairs[sayfa]:
         butonlar.append([
-            custom.Button.inline("🔸 " + pair, data=f"bilgi[{sayfa}]({pair})") for pair in pairs
+            custom.Button.inline("🔸 " + pair, data=f"məlumat[{sayfa}]({pair})") for pair in pairs
         ])
 
-    butonlar.append([custom.Button.inline("◀️ Geri", data=f"sayfa({(max_pages - 1) if sayfa == 0 else (sayfa - 1)})"), custom.Button.inline("İleri ▶️", data=f"sayfa({0 if sayfa == (max_pages - 1) else sayfa + 1})")])
+    butonlar.append([custom.Button.inline("◀️ Geri", data=f"səhifə({(max_pages - 1) if sayfa == 0 else (sayfa - 1)})"), custom.Button.inline("İləri ▶️", data=f"sayfa({0 if sayfa == (max_pages - 1) else sayfa + 1})")])
     return [max_pages, butonlar]
 
 with bot:
@@ -223,11 +222,12 @@ with bot:
         @tgbot.on(NewMessage(pattern='/start'))
         async def start_bot_handler(event):
             if not event.message.from_id == uid:
-                await event.reply(f'`Merhaba ben` @BrendUserbot`! Ben sahibime (`@{me.username}`) yardımcı olmak için varım, yaani sana yardımcı olamam :/ Ama sen de bir Asena açabilirsin; Kanala bak` @AsenaUserBot')
+                await event.reply(f'`Salam mən` @BrendUserbot`! Mən sahibimə (`@{me.username}`) kömək etmək üçün varam, yəni sənə kömək ola bilmərəm :/ \n Amma sən də bir Asena aça bilərsən; Kanala bax` @BrendUserBot')
             else:
-                await event.reply(f'`Tengri save Turks! Asena working... 🐺`')
+                await event.reply(f'``')Tengri save Turks! Asena working... 🐺
 
-        @tgbot.on(InlineQuery)
+       @tgbot.on(InlineQuery)  # pylint:disable=E0602
+
         async def inline_handler(event):
             builder = event.builder
             result = None
@@ -236,16 +236,16 @@ with bot:
                 rev_text = query[::-1]
                 veriler = (butonlastir(0, sorted(CMD_HELP)))
                 result = await builder.article(
-                    f"Lütfen Sadece .yardım Komutu İle Kullanın",
-                    text=f"**🐺 Tanrı Türk'ü Korusun!** [Asena](https://t.me/AsenaUserBot) __Çalışıyor...__\n\n**Yüklenen Modül Sayısı:** `{len(CMD_HELP)}`\n**Sayfa:** 1/{veriler[0]}",
+                    f"Xaiş edirik Sadəcə .yardım əmri İlə İşlədin",
+                    text=f"**🐺 Tanrı Azərbaycanlıları qorusun!** [Brend](https://t.me/BrendUserBot) __İşləyir...__\n\n**Yüklənən Modul Sayı:** `{len(CMD_HELP)}`\n**Sayfa:** 1/{veriler[0]}",
                     buttons=veriler[1],
                     link_preview=False
                 )
             elif query.startswith("http"):
                 parca = query.split(" ")
                 result = builder.article(
-                    "Dosya Yüklendi",
-                    text=f"**Dosya başarılı bir şekilde {parca[2]} sitesine yüklendi!**\n\nYükleme zamanı: {parca[1][:3]} saniye\n[‏‏‎ ‎]({parca[0]})",
+                    "Fayl Yükləndi",
+                    text=f"**Fayl uğurlu şəkildə {parca[2]} saytına yükləndi!**\n\nYüklənmə zamanı: {parca[1][:3]} saniye\n[‏‏‎ ‎]({parca[0]})",
                     buttons=[
                         [custom.Button.url('URL', parca[0])]
                     ],
@@ -253,8 +253,8 @@ with bot:
                 )
             else:
                 result = builder.article(
-                    "@AsenaUserBot",
-                    text="""@AsenaUserBot'u kullanmayı deneyin!
+                    "@BrendUserBot",
+                    text="""@BrendUserBot quraşdırmğı yoxlayın!
 Hesabınızı bot'a çevirebilirsiniz ve bunları kullanabilirsiniz. Unutmayın, siz başkasının botunu yönetemezsiniz! Alttaki GitHub adresinden tüm kurulum detayları anlatılmıştır.""",
                     buttons=[
                         [custom.Button.url("Kanala Katıl", "https://t.me/AsenaUserBot"), custom.Button.url(
@@ -273,7 +273,7 @@ Hesabınızı bot'a çevirebilirsiniz ve bunları kullanabilirsiniz. Unutmayın,
             sayfa = int(event.data_match.group(1).decode("UTF-8"))
             veriler = butonlastir(sayfa, CMD_HELP)
             await event.edit(
-                f"**🐺 Tanrı Türk'ü Korusun!** [Asena](https://t.me/AsenaUserBot) __Çalışıyor...__\n\n**Yüklenen Modül Sayısı:** `{len(CMD_HELP)}`\n**Sayfa:** {sayfa + 1}/{veriler[0]}",
+                f"**🐺 Tanrı Azərbaycanlıları qorusun!** [Brend](https://t.me/BrendUserBot) __İşləyir...__\n\n**Yüklənən Modul Sayısı:** `{len(CMD_HELP)}`\n**Sayfa:** {sayfa + 1}/{veriler[0]}",
                 buttons=veriler[1],
                 link_preview=False
             )
