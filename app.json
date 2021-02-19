@@ -10,8 +10,8 @@
     "modular",
     "productivity"
   ],
-  "repository": "https://github.com/Brend-Support/brenduserbot",
-  "website":   "https://github.com/Brend-Support/brenduserbot",
+  "repository": "https://github.com/brendsupport/brenduserbot",
+  "website":   "https://github.com/brendsupport/brenduserbot",
   "success_url": "https://t.me/BrendUserbot",
   "stack": "container",
   "env": {
