@@ -1,11 +1,11 @@
 {
-  "name": "Asena UserBot",
-  "description": "Asena UserBot",
+  "name": "Brend UserBot",
+  "description": "Brend UserBot",
   "logo": "https://i.hizliresim.com/1UoYoT.jpg",
   "keywords": [
     "telegram",
     "userbot",
-	"Asena",
+	"Brend",
     "plugin",
     "modular",
     "productivity"
@@ -54,7 +54,7 @@
     },
     "UPSTREAM_REPO_URL": {
       "description": "Fork sağlamanız durumunda repo URL'nizi buraya ekleyin. Varsayılan olarak kendi repo adresimiz eklidir.",
-      "value": "https://github.com/Quiec/AsenaUserBot",
+      "value": "https://github.com/Brend-Support/Brend-Userbot",
       "required": true
     },
     "COUNTRY": {
@@ -69,7 +69,7 @@
     },
     "TZ": {
       "description": "Bunun ne işe yaradığı hakkında fikrin yoksa kurcalama :)",
-      "value": "Europe/Istanbul",
+      "value": "Asia/Baku",
       "required": true  
     },
     "CHROME_DRIVER": {
@@ -177,7 +177,7 @@
     },
     "DEFAULT_BIO": {
       "description": "Varsayılan profil biyografisi.",
-      "value": "@AsenaUserBot",
+      "value": "@BrendUserbot",
       "required": false
     },
     "G_DRIVE_CLIENT_SECRET": {
@@ -217,7 +217,7 @@
     },
     "PAKET_ISMI": {
       "description": "Dızla komutu paket ismini belirleyin. Paket ismi şöyle olacaktır: @KullanıcıAdın verdiğin değer 1",
-      "value": "@AsenaUserBot Paketi",
+      "value": "@BrendUserbot Paketi",
       "required": false
     },
     "OTOMATIK_KATILMA": {
