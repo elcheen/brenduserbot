@@ -10,9 +10,9 @@
     "modular",
     "productivity"
   ],
-  "repository": "https://github.com/quiec/AsenaUserbot",
-  "website":   "https://quiec.tech",
-  "success_url": "https://t.me/AsenaSupport",
+  "repository": "https://github.com/Brend-Support/Brend-Userbot",
+  "website":   "https://github.com/Brend-Support/Brend-Userbot",
+  "success_url": "https://t.me/BrendUserbot",
   "stack": "container",
   "env": {
     "API_KEY": {
