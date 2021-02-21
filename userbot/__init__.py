@@ -226,7 +226,7 @@ with bot:
             else:
                 await event.reply(f'`Tengri save Turks! Brend working... 🐺`')
 
-       @tgbot.on(InlineQuery)  # pylint:disable=E0602
+        @tgbot.on(InlineQuery)  # pylint:disable=E0602
 
         async def inline_handler(event):
             builder = event.builder
