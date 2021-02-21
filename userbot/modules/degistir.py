@@ -1,11 +1,3 @@
-# Copyright (C) 2020 Yusuf Usta.
-#
-# Licensed under the  GPL-3.0 License;
-# you may not use this file except in compliance with the License.
-#
-
-# Asena UserBot - Yusuf Usta
-
 import re
 import userbot.modules.sql_helper.mesaj_sql as sql
 from userbot import CMD_HELP
@@ -21,7 +13,7 @@ LANG = get_value("degistir")
 # ████████████████████████████████ #
 
 @register(outgoing=True, pattern="^.change ?(.*)")
-@register(outgoing=True, pattern="^.de[gğ]i[sş]tir ?(.*)")
+@register(outgoing=True, pattern="^.d[eə]yi[sş]dir ?(.*)")
 async def degistir(event):
     plugin = event.pattern_match.group(1)
     mesaj = re.search(r"\"(.*)\"", plugin)
