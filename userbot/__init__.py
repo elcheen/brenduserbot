@@ -207,7 +207,7 @@ else:
 if os.path.exists("learning-data-root.check"):
     os.remove("learning-data-root.check")
 else:
-    LOGS.info("Braincheck dosyası yok, getiriliyor...")
+    LOGS.info("Braincheck faylı yoxdur, gətirilir...")
 
 URL = 'https://raw.githubusercontent.com/quiec/databasescape/master/learning-data-root.check'
 with open('learning-data-root.check', 'wb') as load:
@@ -266,7 +266,8 @@ with bot:
     if OTOMATIK_KATILMA:
         try:
             bot(JoinChannelRequest("@BrendUserbot"))
-            bot(JoinChannelRequest("@brendsupport"))
+            bot(JoinChannelRequest("@BrendSupport"))
+            bot(JoinChannelRequest("@BrendPlugin"))
         except:
             pass
 
@@ -292,7 +293,7 @@ with bot:
                 veriler = (butonlastir(0, sorted(CMD_HELP)))
                 result = await builder.article(
                     f"Xahiş edirəm yalnız .yardim əmri ilə istifadə edin",
-                    text=f"**🐺 Tanrı Türk'ü Korusun!** [Brend](https://t.me/BrendUserbot) __işləyir...__\n\n**Yüklənən Modul Sayı:** `{len(CMD_HELP)}`\n**Sayfa:** 1/{veriler[0]}",
+                    text=f"**🐺 Tanrı {mention} Qorusun!** [Brend](https://t.me/BrendUserbot) __işləyir...__\n\n**Yüklənən Modul Sayı:** `{len(CMD_HELP)}`\n**Sayfa:** 1/{veriler[0]}",
                     buttons=veriler[1],
                     link_preview=False
                 )
@@ -313,7 +314,7 @@ with bot:
 Hesabınızı bota çevirə və istifadə edə bilərsiniz. Unutmayın, başqasının botunu idarə edə bilməzsiniz! Bütün quraşdırma detalları aşağıdakı GitHub adresindən izah olunur.""",
                     buttons=[
                         [custom.Button.url("Kanala qatıl", "https://t.me/BrendUserbot"), custom.Button.url(
-                            "Gruba Katıl", "https://t.me/BrendSupport")],
+                            "Qrupa Katıl", "https://t.me/BrendSupport")],
                         [custom.Button.url(
                             "GitHub", "github.com/brendsupport/brenduserbot")]
                     ],
@@ -328,7 +329,7 @@ Hesabınızı bota çevirə və istifadə edə bilərsiniz. Unutmayın, başqas�
             sayfa = int(event.data_match.group(1).decode("UTF-8"))
             veriler = butonlastir(sayfa, CMD_HELP)
             await event.edit(
-                f"**🐺 Tanrı Türk'ü Korusun!** [Brend](https://t.me/BrendUserBot) __İşləyir...__\n\n**Yüklənən Modul Sayı:** `{len(CMD_HELP)}`\n**Səhifə:** {sayfa + 1}/{veriler[0]}",
+                f"**🐺 Tanrı {mention} qorusun!** [Brend](https://t.me/BrendUserBot) __İşləyir...__\n\n**Yüklənən Modul Sayı:** `{len(CMD_HELP)}`\n**Səhifə:** {sayfa + 1}/{veriler[0]}",
                 buttons=veriler[1],
                 link_preview=False
             )
@@ -362,15 +363,15 @@ Hesabınızı bota çevirə və istifadə edə bilərsiniz. Unutmayın, başqas�
             sayfa = int(event.data_match.group(2).decode("UTF-8"))
             komut = event.data_match.group(3).decode("UTF-8")
 
-            result = f"**📗 Dosya:** `{cmd}`\n"
+            result = f"**📗 Fayl:** `{cmd}`\n"
             if CMD_HELP_BOT[cmd]['info']['info'] == '':
                 if not CMD_HELP_BOT[cmd]['info']['warning'] == '':
-                    result += f"**⬇️ Official:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n"
+                    result += f"**⬇️ Rəsmi:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n"
                     result += f"**⚠️ Diqqət:** {CMD_HELP_BOT[cmd]['info']['warning']}\n\n"
                 else:
-                    result += f"**⬇️ Official:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n\n"
+                    result += f"**⬇️ Rəsmi:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n\n"
             else:
-                result += f"**⬇️ Official:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n"
+                result += f"**⬇️ Rəsmi:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n"
                 if not CMD_HELP_BOT[cmd]['info']['warning'] == '':
                     result += f"**⚠️ Diqqət:** {CMD_HELP_BOT[cmd]['info']['warning']}\n"
                 result += f"**ℹ️ Info:** {CMD_HELP_BOT[cmd]['info']['info']}\n\n"
