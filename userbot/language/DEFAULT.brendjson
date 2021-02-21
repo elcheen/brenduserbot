@@ -1,5 +1,5 @@
 {
-    "__ASENAJSON__": true,
+    "__BRENDJSON__": true,
     "LANGUAGE": "Türkçe",
     "LANGCODE": "tr",
     "AUTHOR": "Asena Ekibi / TDU",
@@ -33,7 +33,7 @@
             "ASENA_PLUGIN_CAPTION": "Bu bir [Asena](https://t.me/AsenaUserBot) pluginidir."
         },
         
-        "__asena": {
+        "__brend": {
             "NEED_PLUGIN": "Lütfen bir Asena modülü adı belirtin.",
             "NEED_MODULE": "Lütfen hangi Asena modülü için yardım istediğinizi belirtin !!\nKullanım: .asena <modül adı>"
         },
