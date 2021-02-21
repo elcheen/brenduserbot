@@ -266,7 +266,7 @@ Hesabınızı bot'a çevirebilirsiniz ve bunları kullanabilirsiniz. Unutmayın,
                 )
             await event.answer([result] if result else None)
 
-       @tgbot.on(callbackquery.CallbackQuery(data=compile(b"Səhifə\((.+?)\)")))
+        @tgbot.on(callbackquery.CallbackQuery(data=compile(b"Səhifə\((.+?)\)")))
         async def sayfa(event):
             if not event.query.user_id == uid: 
                 return await event.answer("❌ Hey! Mənim mesajlarımı redaktə etməyə çalışma! Özün üçün bir @BrendUserBot qur.", cache_time=0, alert=True)
@@ -278,10 +278,10 @@ Hesabınızı bot'a çevirebilirsiniz ve bunları kullanabilirsiniz. Unutmayın,
                 link_preview=False
             )
         
-        @tgbot.on(callbackquery.CallbackQuery(data=compile(b"bilgi\[(\d*)\]\((.*)\)")))
+        @tgbot.on(callbackquery.CallbackQuery(data=compile(b"Məlümat\[(\d*)\]\((.*)\)")))
         async def bilgi(event):
             if not event.query.user_id == uid: 
-                return await event.answer("❌  Hey! BMənim mesajlarımı redaktə etməyə çalışma! Özün üçün bir @BrendUserBot qur.", cache_time=0, alert=True)
+                return await event.answer("❌  Hey! Mənim mesajlarımı redaktə etməyə çalışma! Özün üçün bir @BrendUserBot qur.", cache_time=0, alert=True)
 
             sayfa = int(event.data_match.group(1).decode("UTF-8"))
             komut = event.data_match.group(2).decode("UTF-8")
