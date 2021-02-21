@@ -189,7 +189,7 @@ async def terminal_runner(term):
 CmdHelp('evaluators').add_command(
     'eval', '<işlem>', 'Mini ifadeleri değerlendirin.', 'eval 2+3'
 ).add_command(
-    'exec', '<python kodu>', 'Küçük python komutları yürütün.', 'exec print(\"AsenaUserbottan Selamlar!\")'
+    'exec', '<python kodu>', 'Küçük python komutları yürütün.', 'exec print(\"BrendUserbotdan Selamlar!\")'
 ).add_command(
     'term', '<işlem>', 'Sunucunuzda bash komutlarını ve komut dosyalarını çalıştırın.', 'term ls'
 ).add()
