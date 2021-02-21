@@ -3,12 +3,8 @@ from userbot import cmdhelp
 from userbot import CMD_HELP
 from userbot.events import register
 
-# ██████ LANGUAGE CONSTANTS ██████ #
-
 from userbot.language import get_value
 LANG = get_value("__brend")
-
-# ████████████████████████████████ #
 
 @register(outgoing=True, pattern="^.brend(?: |$)(.*)")
 async def brend(event):
@@ -24,7 +20,7 @@ async def brend(event):
         sayfa = [sorted(list(CMD_HELP))[i:i + 5] for i in range(0, len(sorted(list(CMD_HELP))), 5)]
         
         for i in sayfa:
-            string += f'`▶️ `'
+            string += f'`⚡ `'
             for sira, a in enumerate(i):
                 string += "`" + str(a)
                 if sira == i.index(i[-1]):
