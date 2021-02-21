@@ -4,11 +4,11 @@ from os import path, remove
 from telethon.tl.types import InputMessagesFilterDocument
 
 pchannel = bot.get_entity(PLUGIN_CHANNEL_ID)
-LOGS.info("Dil faylı yüklənir...")
+LOGS.info("Dil dosyası yükleniyor...")
 LANGUAGE_JSON = None
 
 for dil in bot.iter_messages(pchannel, filter=InputMessagesFilterDocument):
-    if ((len(dil.file.name.split(".")) >= 2) and (dil.file.name.split(".")[1] == "asenajson")):
+    if ((len(dil.file.name.split(".")) >= 2) and (dil.file.name.split(".")[1] == "brendjson")):
         if path.isfile(f"./userbot/language/{dil.file.name}"):
             try:
                 LANGUAGE_JSON = loads(open(f"./userbot/language/{dil.file.name}", "r").read())
@@ -16,8 +16,8 @@ for dil in bot.iter_messages(pchannel, filter=InputMessagesFilterDocument):
                 dil.delete()
                 remove(f"./userbot/language/{dil.file.name}")
 
-                if path.isfile("./userbot/language/DEFAULT.asenajson"):
-                    LOGS.warn("Təyin olunan dil faylı istifadə olunur...")
+                if path.isfile("./userbot/language/DEFAULT.brendjson"):
+                    LOGS.warn("Varsayılan dil dosyası kullanılıyor...")
                     LANGUAGE_JSON = loads(open(f"./userbot/language/DEFAULT.brendjson", "r").read())
                 else:
                     raise Exception("Your language file is invalid")
@@ -27,8 +27,8 @@ for dil in bot.iter_messages(pchannel, filter=InputMessagesFilterDocument):
                 LANGUAGE_JSON = loads(open(DOSYA, "r").read())
             except JSONDecodeError:
                 dil.delete()
-                if path.isfile("./userbot/language/DEFAULT.asenajson"):
-                    LOGS.warn("Təyin olunan dil faylı istifadə olunur...")
+                if path.isfile("./userbot/language/DEFAULT.brendjson"):
+                    LOGS.warn("Varsayılan dil dosyası kullanılıyor...")
                     LANGUAGE_JSON = loads(open(f"./userbot/language/DEFAULT.brendjson", "r").read())
                 else:
                     raise Exception("Your language file is invalid")
@@ -47,7 +47,7 @@ if LANGUAGE_JSON == None:
         else:
             raise Exception(f"Didn't find {LANGUAGE} file")
 
-LOGS.info(f"{LANGUAGE_JSON['LANGUAGE']} dili yükləndi.")
+LOGS.info(f"{LANGUAGE_JSON['LANGUAGE']} dili yüklendi.")
 
 def get_value (plugin = None, value = None):
     global LANGUAGE_JSON
