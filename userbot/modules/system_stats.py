@@ -125,7 +125,7 @@ async def amialive(e):
         await e.edit(PLUGIN_MESAJLAR['alive'].format(
             telethon=version.__version__,
             python=python_version(),
-            asena=ASENA_VERSION,
+            brend=BREND_USERBOT,
             plugin=len(CMD_HELP),
             id=me.id,
             username='@' + me.username if me.username else f'[{me.first_name}](tg://user?id={me.id})',
