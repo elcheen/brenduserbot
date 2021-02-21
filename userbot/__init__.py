@@ -224,7 +224,7 @@ with bot:
             if not event.message.from_id == uid:
                 await event.reply(f'`Salam mən` @BrendUserbot`! Mən sahibimə (`@{me.username}`) kömək etmək üçün varam, yəni sənə kömək ola bilmərəm :/ \n Amma sən də bir Asena aça bilərsən; Kanala bax` @BrendUserBot')
             else:
-                await event.reply(f'``')Tengri save Turks! Asena working... 🐺
+                await event.reply(f'`Tengri save Turks! Brend working... 🐺`')
 
        @tgbot.on(InlineQuery)  # pylint:disable=E0602
 
