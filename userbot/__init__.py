@@ -54,51 +54,25 @@ if not LANGUAGE in ["EN", "TR", "AZ", "DEFAULT"]:
     LANGUAGE = "DEFAULT"
     
 BREND_VERSION = "v3.0.7"
-
-# Telegram API KEY ve HASH
 API_KEY = os.environ.get("API_KEY", None)
 API_HASH = os.environ.get("API_HASH", None)
-
 SILINEN_PLUGIN = {}
-# UserBot Session String
 STRING_SESSION = os.environ.get("STRING_SESSION", None)
-
-# Kanal / Grup ID yapılandırmasını günlüğe kaydetme.
 BOTLOG_CHATID = int(os.environ.get("BOTLOG_CHATID", None))
-
-# UserBot günlükleme özelliği.
 BOTLOG = sb(os.environ.get("BOTLOG", "False"))
 LOGSPAMMER = sb(os.environ.get("LOGSPAMMER", "False"))
-
-# Hey! Bu bir bot. Endişelenme ;)
 PM_AUTO_BAN = sb(os.environ.get("PM_AUTO_BAN", "False"))
-
-# Güncelleyici için Heroku hesap bilgileri.
 HEROKU_MEMEZ = sb(os.environ.get("HEROKU_MEMEZ", "False"))
 HEROKU_APPNAME = os.environ.get("HEROKU_APPNAME", None)
 HEROKU_APIKEY = os.environ.get("HEROKU_APIKEY", None)
-
-# Güncelleyici için özel (fork) repo linki.
 UPSTREAM_REPO_URL = os.environ.get(
     "UPSTREAM_REPO_URL",
-    "github.com/brendsupport/brenduserbot")
-
-# Ayrıntılı konsol günlügü
+    "https://github.com/brendsupport/brenduserbot.git")
 CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
-
-# SQL Veritabanı
 DB_URI = os.environ.get("DATABASE_URL", "sqlite:///brend.db")
-
-# OCR API key
 OCR_SPACE_API_KEY = os.environ.get("OCR_SPACE_API_KEY", None)
-
-# remove.bg API key
 REM_BG_API_KEY = os.environ.get("REM_BG_API_KEY", None)
-
-# AUTO PP
 AUTO_PP = os.environ.get("AUTO_PP", None)
-
-# Warn modül
 WARN_LIMIT = int(os.environ.get("WARN_LIMIT", 3))
 WARN_MODE = os.environ.get("WARN_MODE", "gmute")
 
@@ -107,40 +81,23 @@ if not WARN_MODE in ["gmute", "gban"]:
 
 # Galeri
 GALERI_SURE = int(os.environ.get("GALERI_SURE", 60))
-
-# Chrome sürücüsü ve Google Chrome dosyaları
 CHROME_DRIVER = os.environ.get("CHROME_DRIVER", None)
 GOOGLE_CHROME_BIN = os.environ.get("GOOGLE_CHROME_BIN", None)
 
 PLUGINID = os.environ.get("PLUGIN_CHANNEL_ID", None)
-# Plugin İçin
 if not PLUGINID:
     PLUGIN_CHANNEL_ID = "me"
 else:
     PLUGIN_CHANNEL_ID = int(PLUGINID)
-
-# OpenWeatherMap API Key
 OPEN_WEATHER_MAP_APPID = os.environ.get("OPEN_WEATHER_MAP_APPID", None)
 WEATHER_DEFCITY = os.environ.get("WEATHER_DEFCITY", None)
-
-# Lydia API
 LYDIA_API_KEY = os.environ.get("LYDIA_API_KEY", None)
-
-# Anti Spambot
 ANTI_SPAMBOT = sb(os.environ.get("ANTI_SPAMBOT", "False"))
 ANTI_SPAMBOT_SHOUT = sb(os.environ.get("ANTI_SPAMBOT_SHOUT", "False"))
-
-# Youtube API key
 YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", None)
-
-# Saat & Tarih - Ülke ve Saat Dilimi
 COUNTRY = str(os.environ.get("COUNTRY", ""))
 TZ_NUMBER = int(os.environ.get("TZ_NUMBER", 1))
-
-# Temiz Karşılama
 CLEAN_WELCOME = sb(os.environ.get("CLEAN_WELCOME", "True"))
-
-# Last.fm Modülü
 BIO_PREFIX = os.environ.get("BIO_PREFIX", "@BrendUserbot | ")
 DEFAULT_BIO = os.environ.get("DEFAULT_BIO", None)
 
@@ -197,7 +154,6 @@ for binary, path in binaries.items():
 
 # 'bot' değişkeni
 if STRING_SESSION:
-    # pylint: devre dışı=geçersiz ad
     bot = TelegramClient(StringSession(STRING_SESSION), API_KEY, API_HASH)
 else:
     # pylint: devre dışı=geçersiz ad
