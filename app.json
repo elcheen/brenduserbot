@@ -1,7 +1,7 @@
 {
   "name": "Brend UserBot",
   "description": "Brend UserBot",
-  "logo": "https://i.hizliresim.com/1UoYoT.jpg",
+  "logo": "https://telegra.ph/file/9d071c505a081d88e0686.jpg",
   "keywords": [
     "telegram",
     "userbot",
@@ -16,31 +16,31 @@
   "stack": "container",
   "env": {
     "API_KEY": {
-      "description": "Bu değeri my.telegram.org adresinden alın.",
+      "description": "Bu informasiyanı my.telegram.org ünvanından alın.",
       "required": true
     },
     "API_HASH": {
-      "description": "Bu değeri my.telegram.org adresinden alın.",
+      "description": "Bu informasiyanı my.telegram.org ünvanından alın.",
       "required": true
     },
     "PLUGIN_CHANNEL_ID": {
-      "description": "İsteğe bağlıdır, almak için @AsenaKaliciPlugin",
+      "description": "İstəyə bağlıdır, almaq üçün kanal açıb ID sini bura yazın.",
       "required": false
     },
     "SPOTIFY_DC": {
-      "description": "Spotify bio için gerekli olan anahtar",
+      "description": "Spotify bio üçün lazımlı olan məlmumat",
       "required": false
     },
     "SPOTIFY_KEY": {
-      "description": "Spotify bio için gerekli olan anahtar",
+      "description": "Spotify bio üçün lazımlı olan məlmumat",
       "required": false
     },
     "STRING_SESSION": {
-      "description": "python3 GenerateStringSession.py dosyasını yerel olarak çalıştırarak bu değeri alın.",
+      "description": "python3 GenerateStringSession.py faylını yerli olaraq işlədərək bu informasiyanı alın.",
       "required": true
     },
     "HEROKU_MEMEZ": {
-      "description": "UserBot bir Heroku Dyno üzerinde çalışıyorsa, bu değer True olmalıdır.",
+      "description": "UserBot bir Heroku Dyno üzərində işləyirsə, bu seçim True olmalıdır.",
       "value": "True",
       "required": true
     },
