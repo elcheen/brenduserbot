@@ -1,8 +1,8 @@
 {
-    "__ASENAJSON__": true,
+    "__BRENDJSON__": true,
     "LANGUAGE": "Azərbaycanca",
     "LANGCODE": "az",
-    "AUTHOR": "@senanoguz",
+    "AUTHOR": "t.me/BrendSupport",
     "STRINGS": {
         "__plugin": {
             "REPLY_FOR_PORT": "`Zəhmət olmasa Plugin-Port üçün bir fayla cavab yazın`",
@@ -33,7 +33,7 @@
             "ASENA_PLUGIN_CAPTION": "Bu [Asena](https://t.me/AsenaUserBot) pluginidir."
         },
         
-        "__asena": {
+        "__brend": {
             "NEED_PLUGIN": "Zəhmət olmasa bir Asena modulu adı yazın.",
             "NEED_MODULE": "Zəhmət olmasa hansı Asena modulu üçün kömək istədiyinizi qeyd edin !!\nİstifadəsi: .asena <modul adı>"
         },
@@ -114,7 +114,7 @@
             "ALREADY": "`Hazırda %s onsuzda avtomatik olaraq dəyişir.`",
             "SETTING": "`%s nizamlanır...`",
             "BIO": "📅 Tarix: {tarih} | ⌚️ Saat: {saat} | ",
-            "NICK": "@AsenaUserBot",
+            "NICK": "@BrendUserbot",
             "SETTED": "`%s nizamlandı :)`",
             "NAME": "⏰%s"
         },
