@@ -31,9 +31,9 @@
             "PLUG_DELETED": "`Plugin deleted successfully!` '**You need to restart operations to be implemented.**",
             "ASENA_PLUGIN_CAPTION": "This is a plugin of [Asena](https://t.me/AsenaUserBot)."
         },
-        "__asena": {
-            "NEED_PLUGIN": "Please specify an Asena module name.",
-            "NEED_MODULE": "Please specify which Asena module you want help for !!\nUse: .asena <module name>"
+        "__brend": {
+            "NEED_PLUGIN": "Please specify an Brend module name.",
+            "NEED_MODULE": "Please specify which Asena module you want help for !!\nUse: .brend <module name>"
         },
         "__helpme": {
             "NO_BOT": "`The Bot doesn't work! Please set the Bot token and Username correctly. Module aborted.`"
@@ -108,7 +108,7 @@
             "ALREADY": "`It looks like %s is already changing automatically. `",
             "SETTING": "`%s setting...`",
             "BIO": "📅 Date: {tarih} | ⌚️ Time: {saat} | ",
-            "NICK": "@AsenaUserBot",
+            "NICK": "@BrendUserBot",
             "SETTED": "`%s set :)`",
             "NAME": "⏰%s"
         },
@@ -144,8 +144,8 @@
             "EFECTING": "`Applying effect...`",
             "NOT_FOUND_EFECT": "**The effect you specified was not found! ** `Effects you can use:\" çocuk/robot/earrape/fast/interference/echo`",
             "NEED_VIDEO": "`Please reply to a Video!`",
-            "WITH_ASENA": "`Effect applied with` @AsenaUserBot",
-            "WITH_ASENA_GIF": "`Turned to Gif with` @AsenaUserBot",
+            "WITH_BREND": "`Effect applied with` @BrendUserbot",
+            "WITH_BREND_GIF": "`Turned to Gif with` @BrendUserbot",
             "CONVERTING_TO_GIF": "Turning to gif ...",
             "UPLOADING_GIF": "` Loading Gif ... `",
             "ERROR": "I couldn't turn it into a gif :/"
@@ -252,7 +252,7 @@
         },
         "galeri": {
             "ADDED_LIST": "`The photo has been queued.`",
-            "INVALID_URL": "`You have entered an invalid image URL. If you have no idea of usage,` `.asena galeri` `please write.`",
+            "INVALID_URL": "`You have entered an invalid image URL. If you have no idea of usage,` `.brend galeri` `please write.`",
             "EXAMPLE": "`Please enter a picture address. As an example: ` `.galeri ekle https://i.resimyukle.xyz/7Qbbc9.jpeg`",
             "LIST": "Queued Photos",
             "REMOVED": "** The next photo was successfully removed **",
@@ -260,7 +260,7 @@
             "NEED_NUMBER": "Please indicate the order of the image. Example:",
             "WORKING": "`The gallery is already working.`",
             "STARTED": "`The gallery is working`",
-            "NEED_PHOTO": "You need to add photos for the gallery work. If you do not know how to add it, you may know about use with the .asena galeri",
+            "NEED_PHOTO": "You need to add photos for the gallery work. If you do not know how to add it, you may know about use with the .brend galeri",
             "STOPPED": "`The Gallery is stopped!`",
             "ALREADY_STOP": "`Gallery isn't working anyway. `",
             "INVALID": "**Unknown command** Usage:\n\nAdd a photo to the Gallery: `.galeri ekle https://i.resimyukle.xyz/7Qbbc9.jpeg`\nSee the gallery list: `.galeri liste `\nDeleting an ordinary photograph: `.galeri sil <number>`"
@@ -331,16 +331,16 @@
             "REPLY_TO_FILE": "`Reply to a file.`",
             "QUERY": "Query",
             "RESULT": "Result",
-            "NEED_MUCH_DATA_FOR_RANDOM": "`2 or more items are required. Enter the .asena random command for more information.`",
+            "NEED_MUCH_DATA_FOR_RANDOM": "`2 or more items are required. Enter the .brend random command for more information.`",
             "SLEEP_DESC": "Usage: ` .sleep [saniye]`",
             "SLEEPING": "`I sleep with the snorkhead ...`",
             "GOODMORNIN_YALL": "`Good Morning!`",
             "GOODBYE_MFRS": "`I'll see you... *Windows XP shutdown sound* `",
             "RESTARTING": "`Bot restarting...`",
-            "SUPPORT_GROUP": "[From Here](http://t.me/AsenaSupport) you can contact our support group.",
-            "CREATOR": "This bot was developed by\n[Yusuf](https://t.me/Fusuf) [Usta](https://t.me/SelaxG)",
-            "README": "[Asena README.md](https://github.com/quiec/AsenaUserBot/blob/master/README.md)",
-            "REPO": "[Asena Repo](https://github.com/quiec/asenauserbot)",
+            "SUPPORT_GROUP": "[From Here](http://t.me/BrendSupport) you can contact our support group.",
+            "CREATOR": "This bot was developed by\n[Hüseyn](https://t.me/Mr_HD_20)",
+            "README": "[Brend README.md](https://github.com/brendsupport/brenduserbot/blob/main/README.md)",
+            "REPO": "[Brend Repo](https://github.com/brendsupport/brenduserbot)",
             "CHECK_LOGS": "`Check userbot logs for decoded message!`"
         },
         "notes": {
@@ -488,7 +488,7 @@
             "SEARCHING": "`Song searching...`",
             "BLOCKED_DEEZER": "`Mmmh, I think you blocked` @DeezerMusicBot `Please open the block.`",
             "NOT_FOUND": "` The song you were looking for was not found! I'm sorry.`",
-            "UPLOADED_WITH": "Upload with @AsenaUserBot",
+            "UPLOADED_WITH": "Upload with @BrendUserbot",
             "USAGE": "`Usage:` `.song song name/youtube url/spotify url`",
             "SEARCHING_SPOT": "Song searching and downloading please wait!",
             "DOWNLOADED": "`Download is successfully please wait.`",
@@ -523,7 +523,7 @@
             "QUERY": "Query",
             "RESULT": "Result",
             "NOT_FOUND": "Nothing found",
-            "EXAMPLE": "`Use the .asena pip command to see an example. `"
+            "EXAMPLE": "`Use the .brend pip command to see an example. `"
         },
         "time": {
             "CLOCK": "Time here",
@@ -542,7 +542,7 @@
             "NOT_FOUND": "folder not found.",
             "GIT_ERROR": "Git error!",
             "NOT_GIT": "folder does not look like a git repo. \nBut you can solve this problem by forcibly updating the bot with the .update now command.",
-            "INVALID_BRANCH": "**[UPDATER]: * * ` I think you've modified the Asena bot and you're using your own branch.\nThis confuses the Updater,\nWhere will the update be pulled?\nPlease use the Asena bot from the official repo.`",
+            "INVALID_BRANCH": "**[UPDATER]: * * ` I think you've modified the Brend bot and you're using your own branch.\nThis confuses the Updater,\nWhere will the update be pulled?\nPlease use the Brend bot from the official repo.`",
             "UPDATE": "\n`Your bot` **completely up to date!** `Branch:` **{}**\n",
             "WAS_UPDATE": "New update available for ** { }!\n\nChanges: **\n ` {} `",
             "BIG": "`The change list is too large, you should display it as a file.`",
