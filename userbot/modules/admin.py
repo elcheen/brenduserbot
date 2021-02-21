@@ -321,7 +321,6 @@ async def demote(dmod):
         await dmod.edit(NO_ADMIN)
         return
 
-    # Eğer başarılı olursa, yetki düşürüleceğini beyan edelim
     await dmod.edit(LANG['UNPROMOTING'])
     rank = "admeme"  # Burayı öylesine yazdım
     user = await get_user_from_event(dmod)
@@ -359,10 +358,10 @@ async def demote(dmod):
 
 
 @register(outgoing=True, pattern="^.ban(?: |$)(.*)")
-async def ban(bon):
+async def ban(ban):
     """ .ban komutu belirlenen kişiyi gruptan yasaklar """
     # Yetki kontrolü
-    chat = await bon.get_chat()
+    chat = await ban.get_chat()
     admin = chat.admin_rights
     creator = chat.creator
 
@@ -370,7 +369,7 @@ async def ban(bon):
         await bon.edit(NO_ADMIN)
         return
 
-    user, reason = await get_user_from_event(bon)
+    user, reason = await get_user_from_event(ban)
     if user:
         pass
     else:
@@ -378,23 +377,23 @@ async def ban(bon):
 
     # Eğer kullanıcı sudo ise
     if user.id in BRAIN_CHECKER or user.id in WHITELIST:
-        await bon.edit(
+        await ban.edit(
             LANG['BRAIN']
         )
         return
 
     # Hedefi yasaklayacağınızı duyurun
-    await bon.edit(LANG['BANNING'])
+    await ban.edit(LANG['BANNING'])
 
     try:
-        await bon.client(EditBannedRequest(bon.chat_id, user.id,
+        await ban.client(EditBannedRequest(bon.chat_id, user.id,
                                            BANNED_RIGHTS))
     except:
-        await bon.edit(NO_PERM)
+        await ban.edit(NO_PERM)
         return
     # Spamcılar için
     try:
-        reply = await bon.get_reply_message()
+        reply = await ban.get_reply_message()
         if reply:
             await reply.delete()
     except:
