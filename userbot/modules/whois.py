@@ -8,12 +8,8 @@ from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
 from userbot.events import register
 from userbot.cmdhelp import CmdHelp
 
-# ██████ LANGUAGE CONSTANTS ██████ #
-
 from userbot.language import get_value
 LANG = get_value("whois")
-
-# ████████████████████████████████ #
 
 @register(pattern=".whois(?: |$)(.*)", outgoing=True)
 async def who(event):
