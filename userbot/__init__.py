@@ -266,7 +266,7 @@ Hesabınızı bot'a çevirebilirsiniz ve bunları kullanabilirsiniz. Unutmayın,
                 )
             await event.answer([result] if result else None)
 
-        @tgbot.on(callbackquery.CallbackQuery(data=compile(b"Səhifə\((.+?)\)")))
+       @tgbot.on(callbackquery.CallbackQuery(data=compile(b"Səhifə\((.+?)\)")))
         async def sayfa(event):
             if not event.query.user_id == uid: 
                 return await event.answer("❌ Hey! Mənim mesajlarımı redaktə etməyə çalışma! Özün üçün bir @BrendUserBot qur.", cache_time=0, alert=True)
