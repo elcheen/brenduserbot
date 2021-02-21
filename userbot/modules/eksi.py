@@ -1,11 +1,3 @@
-# Copyright (C) 2020 Yusuf Usta.
-#
-# Licensed under the GPL-3.0 License;
-# you may not use this file except in compliance with the License.
-#
-
-# Asena UserBot - Yusuf Usta
-
 from userbot.events import register
 from eksipy import Baslik, Giri, Eksi
 from datetime import datetime
@@ -24,7 +16,7 @@ async def baslik(event):
     try:
         baslik = Baslik(baslik, sayfa)
     except:
-        return await event.edit('`Böyle bir başlık bulunamadı.`')
+        return await event.edit('`Belə bir başlıq tapılmadı.`')
     
     topic = baslik.get_topic()
     entrys = baslik.get_entrys()
@@ -34,7 +26,7 @@ async def baslik(event):
         if len(entry.text().strip()) < 450:
             Result += f'`{entry.text().strip()}`\n__[{datetime.utcfromtimestamp(entry.date).strftime("%d/%m/%Y")}](https://eksisozluk.com/entry/{entry.id}) [{entry.author}](https://eksisozluk.com/biri/{urllib.parse.quote(entry.author)})__\n\n'
         else:
-            Result += f'**Bu entry uzun gözüküyor.** `.entry {entry.id}` ile alabilirsiniz.\n\n'
+            Result += f'**Bu entry uzun görünür.** `.entry {entry.id}` ilə ala bilərsiniz.\n\n'
     return await event.edit(Result)
 
 @register(outgoing=True, pattern="^.entry ?(\d*)")
@@ -43,7 +35,7 @@ async def entry(event):
     try:
         Entry = Giri(Entry).get_entry()
     except:
-        return await event.edit('`Böyle bir entry bulunamadı.`')
+        return await event.edit('`Belə bir entry tapılmadı.`')
     
     Result = f'**Başlık: **`{Entry.topic.title}`\n\n'
     Result += f'`{Entry.text().strip()}`\n __[{datetime.utcfromtimestamp(Entry.date).strftime("%d/%m/%Y")}](https://eksisozluk.com/entry/{Entry.id}) [{Entry.author}](https://eksisozluk.com/biri/{urllib.parse.quote(Entry.author)})__\n\n'
