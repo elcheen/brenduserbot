@@ -139,7 +139,7 @@ async def amialive(e):
             PLUGIN_MESAJLAR['alive'].text = PLUGIN_MESAJLAR['alive'].text.format(
                 telethon=version.__version__,
                 python=python_version(),
-                asena=ASENA_VERSION,
+                brend=BREND_VERSION,
                 plugin=len(CMD_HELP),
                 id=me.id,
                 username='@' + me.username if me.username else f'[{me.first_name}](tg://user?id={me.id})',
@@ -160,5 +160,5 @@ CmdHelp('system_stats').add_command(
 ).add_command(
     'pip', '<modül(ler)>', 'Pip modüllerinde arama yapar.'
 ).add_command(
-    'alive', None, 'Asena botunun çalışıp çalışmadığını kontrol etmek için kullanılır.'
+    'alive', None, 'Bend botunun çalışıp çalışmadığını kontrol etmek için kullanılır.'
 ).add()
