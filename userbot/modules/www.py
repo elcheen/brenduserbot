@@ -6,16 +6,11 @@ from userbot import CMD_HELP
 from userbot.events import register
 from userbot.cmdhelp import CmdHelp
 
-# ██████ LANGUAGE CONSTANTS ██████ #
-
 from userbot.language import get_value
 LANG = get_value("www")
 
-# ████████████████████████████████ #
-
 @register(outgoing=True, pattern="^.speed$")
 async def speedtst(spd):
-    """ .speed komanda server sürətini aşkarlamaq üçün speedtest-dən istifadə edir. """
     await spd.edit(LANG['SPEED'])
     test = Speedtest()
 
@@ -50,11 +45,10 @@ def speed_convert(size):
 
 @register(outgoing=True, pattern="^.dc$")
 async def neardc(event):
-    """ .dc komanda ən yaxın məlumat mərkəzi məlumat verir. """
     result = await event.client(functions.help.GetNearestDcRequest())
-    await event.edit(f"Şehir : `{result.country}`\n"
-                     f"En yakın datacenter : `{result.nearest_dc}`\n"
-                     f"Şu anki datacenter : `{result.this_dc}`")
+    await event.edit(f"Şəhər : `{result.country}`\n"
+                     f"Ən yaxın datacenter : `{result.nearest_dc}`\n"
+                     f"Cari datacenter : `{result.this_dc}`")
 
 
 @register(outgoing=True, pattern="^.ping$")
