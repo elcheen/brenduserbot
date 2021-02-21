@@ -53,8 +53,7 @@ if not LANGUAGE in ["EN", "TR", "AZ", "DEFAULT"]:
     LOGS.info("Naməlum bir dildə yazdınız. Buna görə DEFAULT istifadə olunur.")
     LANGUAGE = "DEFAULT"
     
-# Asena Sürümü
-ASENA_VERSION = "v3.0.7"
+BREND_VERSION = "v3.0.7"
 
 # Telegram API KEY ve HASH
 API_KEY = os.environ.get("API_KEY", None)
@@ -142,7 +141,7 @@ TZ_NUMBER = int(os.environ.get("TZ_NUMBER", 1))
 CLEAN_WELCOME = sb(os.environ.get("CLEAN_WELCOME", "True"))
 
 # Last.fm Modülü
-BIO_PREFIX = os.environ.get("BIO_PREFIX", "@AsenaUserBot | ")
+BIO_PREFIX = os.environ.get("BIO_PREFIX", "@BrendUserbot | ")
 DEFAULT_BIO = os.environ.get("DEFAULT_BIO", None)
 
 LASTFM_API = os.environ.get("LASTFM_API", None)
@@ -309,7 +308,7 @@ with bot:
                 )
             else:
                 result = builder.article(
-                    "@AsenaUserBot",
+                    "@BrendUserBot",
                     text="""@Brenduserbot'u yoxlayın!
 Hesabınızı bota çevirə və istifadə edə bilərsiniz. Unutmayın, başqasının botunu idarə edə bilməzsiniz! Bütün quraşdırma detalları aşağıdakı GitHub adresindən izah olunur.""",
                     buttons=[
@@ -357,7 +356,7 @@ Hesabınızı bota çevirə və istifadə edə bilərsiniz. Unutmayın, başqas�
         @tgbot.on(callbackquery.CallbackQuery(data=compile(b"komut\[(.*)\[(\d*)\]\]\((.*)\)")))
         async def komut(event):
             if not event.query.user_id == uid: 
-                return await event.answer("❌ Hey! Benim mesajlarımı düzenlemeye kalkma! Kendine bir @AsenaUserBot kur.", cache_time=0, alert=True)
+                return await event.answer("❌ Hey! Mesajlarımı düzəltməyə çalışmayın! Özünüzü @BrendUserBot seçin.", cache_time=0, alert=True)
 
             cmd = event.data_match.group(1).decode("UTF-8")
             sayfa = int(event.data_match.group(2).decode("UTF-8"))
