@@ -1,20 +1,9 @@
-# Copyright (C) 2019 The Raphielscape Company LLC.
-#
-# Licensed under the Raphielscape Public License, Version 1.c (the "License");
-# you may not use this file except in compliance with the License.
-#
-
-# Asena UserBot - Yusuf Usta
-
-
-""" Sunucu hakkında bilgi veren UserBot modülüdür. """
-
 from asyncio import create_subprocess_shell as asyncrunapp
 from asyncio.subprocess import PIPE as asyncPIPE
 from platform import uname
 from shutil import which
 from os import remove
-from userbot import CMD_HELP, ASENA_VERSION
+from userbot import CMD_HELP, BREND_VERSION
 from userbot.events import register
 from userbot.main import PLUGIN_MESAJLAR
 from telethon import version
