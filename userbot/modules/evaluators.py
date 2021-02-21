@@ -1,14 +1,3 @@
-# Copyright (C) 2021 The Raphielscape Company LLC.
-#
-# Licensed under the Raphielscape Public License, Version 1.c (the "License");
-# you may not use this file except in compliance with the License.
-#
-
-# Asena UserBot - ᴇʟçɪɴ ¦ 🇯🇵
-
-
-""" Telegram'dan kod ve terminal əmrlərini idarə eləməl üçün UserBot modulu. """
-
 import asyncio
 from getpass import getuser
 from os import remove
@@ -26,7 +15,7 @@ LANG = get_value("evaluators")
 
 @register(outgoing=True, pattern="^.eval(?: |$)(.*)")
 async def evaluate(query):
-    """ .eval əmri verilen Python ifadəsini dəyərləndirər. """
+    """ .eval komutu verilen Python ifadesini değerlendirir. """
     if query.is_channel and not query.is_group:
         await query.edit(LANG['FORBIDDEN_IN_CHANNEL'])
         return
@@ -75,12 +64,12 @@ async def evaluate(query):
     if BOTLOG:
         await query.client.send_message(
             BOTLOG_CHATID,
-            f"Eval sorğusu {expression} başarıyla edildi")
+            f"Eval sorgusu {expression} başarıyla yürütüldü")
 
 
 @register(outgoing=True, pattern=r"^.exec(?: |$)([\s\S]*)")
 async def run(run_q):
-    """ .exec əmri dinamik olaraq yaradılan programı idarə edər."""
+    """ .exec komutu dinamik olarak oluşturulan programı yürütür """
     code = run_q.pattern_match.group(1)
 
     if run_q.is_channel and not run_q.is_group:
@@ -139,19 +128,19 @@ async def run(run_q):
     if BOTLOG:
         await run_q.client.send_message(
             BOTLOG_CHATID,
-            "Exec sorğusu " + codepre + " uğurla edildi")
+            "Exec sorgusu " + codepre + " başarıyla yürütüldü")
 
 
 @register(outgoing=True, pattern="^.term(?: |$)(.*)")
 async def terminal_runner(term):
-    """ .term əmri severinizdə bash əmrlərini və əmr fayllarını çalışdırar. """
+    """ .term komutu sunucunuzda bash komutlarını ve komut dosyalarını çalıştırır. """
     curruser = getuser()
     command = term.pattern_match.group(1)
     try:
         from os import geteuid
         uid = geteuid()
     except ImportError:
-        uid = "Bu deyil müdür!"
+        uid = "Bu değil şef!"
 
     if term.is_channel and not term.is_group:
         await term.edit(LANG['FORBIDDEN_IN_CHANNEL'])
@@ -194,13 +183,13 @@ async def terminal_runner(term):
     if BOTLOG:
         await term.client.send_message(
             BOTLOG_CHATID,
-            "Terminal əmri " + command + " uğurla edildi ",
+            "Terminal Komutu " + command + " başarıyla yürütüldü",
         )
 
 CmdHelp('evaluators').add_command(
-    'eval', '<iş>', 'Mini ifadələri dəyərləndirin.', 'eval 2+3'
+    'eval', '<işlem>', 'Mini ifadeleri değerlendirin.', 'eval 2+3'
 ).add_command(
-    'exec', '<python kodu>', 'Küçük python əmrləri idarə edin.'
+    'exec', '<python kodu>', 'Küçük python komutları yürütün.', 'exec print(\"AsenaUserbottan Selamlar!\")'
 ).add_command(
     'term', '<işlem>', 'Sunucunuzda bash komutlarını ve komut dosyalarını çalıştırın.', 'term ls'
 ).add()
