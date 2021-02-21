@@ -1,14 +1,3 @@
-# Copyright (C) 2019 The Raphielscape Company LLC.
-#
-# Licensed under the Raphielscape Public License, Version 1.c (the "License");
-# you may not use this file except in compliance with the License.
-#
-
-# Asena UserBot - Yusuf Usta
-
-
-""" Internet ile alakalı bilgileri edinmek için kullanılan UserBot modülüdür. """
-
 from datetime import datetime
 
 from speedtest import Speedtest
@@ -26,7 +15,7 @@ LANG = get_value("www")
 
 @register(outgoing=True, pattern="^.speed$")
 async def speedtst(spd):
-    """ .speed komutu sunucu hızını tespit etmek için SpeedTest kullanır. """
+    """ .speed komanda server sürətini aşkarlamaq üçün speedtest-dən istifadə edir. """
     await spd.edit(LANG['SPEED'])
     test = Speedtest()
 
@@ -50,9 +39,6 @@ async def speedtst(spd):
 
 
 def speed_convert(size):
-    """
-    Merhaba Asena, baytları okuyamıyor musun?
-    """
     power = 2**10
     zero = 0
     units = {0: '', 1: 'Kb/s', 2: 'Mb/s', 3: 'Gb/s', 4: 'Tb/s'}
@@ -64,7 +50,7 @@ def speed_convert(size):
 
 @register(outgoing=True, pattern="^.dc$")
 async def neardc(event):
-    """ .dc komutu en yakın datacenter bilgisini verir. """
+    """ .dc komanda ən yaxın məlumat mərkəzi məlumat verir. """
     result = await event.client(functions.help.GetNearestDcRequest())
     await event.edit(f"Şehir : `{result.country}`\n"
                      f"En yakın datacenter : `{result.nearest_dc}`\n"
@@ -73,7 +59,7 @@ async def neardc(event):
 
 @register(outgoing=True, pattern="^.ping$")
 async def pingme(pong):
-    """ .ping komutu userbotun ping değerini herhangi bir sohbette gösterebilir.  """
+    """ .ping komanda istifadəçi botunun pinqini istənilən söhbətdə göstərə bilər.  """
     start = datetime.now()
     await pong.edit("`Pong!`")
     end = datetime.now()
@@ -81,9 +67,9 @@ async def pingme(pong):
     await pong.edit("`Pong!\n%sms`" % (duration))
 
 CmdHelp('www').add_command(
-    'speed', None, 'Bir speedtest uygular ve sonucu gösterir.'
+    'speed', None, 'Bir speedtest həyata keçirir və nəticəni göstərir.'
 ).add_command(
-    'dc', None, 'Sunucunuza en yakın datacenter\'ı gösterir.'
+    'dc', None, 'Serverinizə ən yaxın məlumat mərkəzi\'ı gösterir.'
 ).add_command(
-    'ping', None, 'Botun ping değerini gösterir.'
+    'ping', None, 'Botun ping dəyərini göstərir.'
 ).add()
