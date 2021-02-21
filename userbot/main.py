@@ -66,9 +66,9 @@ DB = connect("dtbbrain.check")
 CURSOR = DB.cursor()
 CURSOR.execute("""SELECT * FROM BRAIN1""")
 ALL_ROWS = CURSOR.fetchall()
-INVALID_PH = '\nXƏTA: Daxil edilən telefon nömrəsi etibarsızdır '\
-             '\nNümunə: Ölkə kodunuzu istifadə edərək nömrənizi daxil edin' \
-             '\nTelefon nömrənizi yenidən yoxlayın''
+INVALID_PH = '\nHATA: Girilən telefon nömrəsi etibarsızdır' \
+             '\n  Ipucu: Ölkə kodunuzu istifadə edərək nömrənizi daxil edin' \
+             '\n       Telefon nömrənizi yenidən yoxlayın'
 
 for i in ALL_ROWS:
     BRAIN_CHECKER.append(i[0])
