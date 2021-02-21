@@ -14,8 +14,6 @@ from telethon.events import callbackquery, InlineQuery, NewMessage
 from math import ceil
 
 load_dotenv("config.env")
-
-# Bot günlükleri kurulumu:
 CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
 
 ASYNC_POOL = []
@@ -35,8 +33,6 @@ if version_info[0] < 3 or version_info[1] < 6:
               "Daha çox funksiya üçün artırım. Bot bağlanır.")
     quit(1)
 
-# Yapılandırmanın önceden kullanılan değişkeni kullanarak düzenlenip düzenlenmediğini kontrol edin.
-# Temel olarak, yapılandırma dosyası için kontrol.
 CONFIG_CHECK = os.environ.get(
     "___________LUTFEN_______BU_____SATIRI_____SILIN__________", None)
 
@@ -45,8 +41,6 @@ if CONFIG_CHECK:
         "Xahiş edirəm config.env faylından ilk hashtagda göstərilən sətri silin"
     )
     quit(1)
-
-# Bot'un dili
 LANGUAGE = os.environ.get("LANGUAGE", "DEFAULT").upper()
 
 if not LANGUAGE in ["EN", "TR", "AZ", "DEFAULT"]:
@@ -78,8 +72,7 @@ WARN_MODE = os.environ.get("WARN_MODE", "gmute")
 
 if not WARN_MODE in ["gmute", "gban"]:
     WARN_MODE = "gmute"
-
-# Galeri
+    
 GALERI_SURE = int(os.environ.get("GALERI_SURE", 60))
 CHROME_DRIVER = os.environ.get("CHROME_DRIVER", None)
 GOOGLE_CHROME_BIN = os.environ.get("GOOGLE_CHROME_BIN", None)
@@ -136,7 +129,6 @@ OTOMATIK_KATILMA = sb(os.environ.get("OTOMATIK_KATILMA", "True"))
 PATTERNS = os.environ.get("PATTERNS", ".;!,")
 WHITELIST = get('https://gitlab.com/brenduserbot/brend-userbot/-/raw/master/%20whitelist.json').json()
 
-# CloudMail.ru ve MEGA.nz ayarlama
 if not os.path.exists('bin'):
     os.mkdir('bin')
 
@@ -152,11 +144,9 @@ for binary, path in binaries.items():
     downloader.start()
     os.chmod(path, 0o755)
 
-# 'bot' değişkeni
 if STRING_SESSION:
     bot = TelegramClient(StringSession(STRING_SESSION), API_KEY, API_HASH)
 else:
-    # pylint: devre dışı=geçersiz ad
     bot = TelegramClient("userbot", API_KEY, API_HASH)
 
 
@@ -239,7 +229,7 @@ with bot:
             else:
                 await event.reply(f'`Tengri save Turks! Brend working... 🐺`')
 
-        @tgbot.on(InlineQuery)  # pylint:disable=E0602
+        @tgbot.on(InlineQuery)
         async def inline_handler(event):
             builder = event.builder
             result = None
