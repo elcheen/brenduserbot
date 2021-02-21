@@ -48,5 +48,5 @@ async def durums(event):
     """)
 
 CmdHelp('durum').add_command(
-    'durum', None, 'Eklenen Apiler ve sürümleri gösterir.'
+    'durum', None, 'Əlavə edilən Apilər və versionları göstərər.'
 ).add()
