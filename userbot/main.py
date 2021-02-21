@@ -20,14 +20,14 @@ import re
 import userbot.cmdhelp
 
 DIZCILIK_STR = [
-    "Çıkartmayı dızlıyorum...",
-    "Yaşasın dızcılık...",
-    "Bu çıkartmayı kendi paketime davet ediyorum...",
-    "Bunu dızlamam lazım...",
-    "Hey bu güzel bir çıkartma!\nHemen dızlıyorum..",
-    "Çıkartmanı dızlıyorum\nhahaha.",
-    "Hey şuraya bak. (☉｡☉)!→\nBen bunu dızlarken...",
-    "Güller kırmızı menekşeler mavi, bu çıkartmayı paketime dızlayarak havalı olacağım...",
+    "Stikeri Fırladıram...",
+    "Yaşasın fırlatmaq...",
+    "Bu stikeri öz paketimə dəvət edirəm...",
+    "Bunu fırlatmalıyam...",
+    "Hey bu gözəl bir stikerdi!\nBir an öncə fırladıram..",
+    "Stikerinizi fırladırəm\nhahaha.",
+    "Hey bura bax. (☉｡☉)!→\nMən bunu fırladıram...",
+    "Güllər qırmızı bənövşələr mavi, bu stikeri paketimə əlavə edərək dava dəbdəbəli olacağam...",
     "Çıkartma hapsediliyor...",
     "Bay dızcı bu çıkartmayı dızlıyor... ",
 ]
