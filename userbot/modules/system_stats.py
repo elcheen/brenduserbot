@@ -12,12 +12,9 @@ from userbot.cmdhelp import CmdHelp
 
 # ================= CONSTANT =================
 DEFAULTUSER = uname().node
-# ██████ LANGUAGE CONSTANTS ██████ #
 
 from userbot.language import get_value
 LANG = get_value("system_stats")
-
-# ████████████████████████████████ #
 # ============================================
 
 @register(outgoing=True, pattern="^.sysd$")
@@ -125,7 +122,7 @@ async def amialive(e):
         await e.edit(PLUGIN_MESAJLAR['alive'].format(
             telethon=version.__version__,
             python=python_version(),
-            brend=BREND_USERBOT,
+            brend=BREND_VERSION,
             plugin=len(CMD_HELP),
             id=me.id,
             username='@' + me.username if me.username else f'[{me.first_name}](tg://user?id={me.id})',
@@ -160,5 +157,5 @@ CmdHelp('system_stats').add_command(
 ).add_command(
     'pip', '<modül(ler)>', 'Pip modüllerinde arama yapar.'
 ).add_command(
-    'alive', None, 'Bend botunun çalışıp çalışmadığını kontrol etmek için kullanılır.'
+    'alive', None, 'Brend botunun çalışıp çalışmadığını kontrol etmek için kullanılır.'
 ).add()
