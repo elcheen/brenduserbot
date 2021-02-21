@@ -30,12 +30,12 @@
             "ALREADY_DELETED": "`Plugin faylı artıq silinib.`",
             "NOT_FOUND_PLUGIN": "`Belə bir plugin bəlkə var idi, bəlkədə yox. Ancaq hazırda olmadığı dəqiqdir.`",
             "PLUG_DELETED": "`Plugin uğurla yükləndi!` **Tətbiq ediləcək əməliyyatlar üçün yenidən başlatmağınız lazımdır.**",
-            "ASENA_PLUGIN_CAPTION": "Bu [Asena](https://t.me/AsenaUserBot) pluginidir."
+            "BREND_PLUGIN_CAPTION": "Bu [Brend](https://t.me/BrendUserBot) pluginidir."
         },
         
         "__brend": {
-            "NEED_PLUGIN": "Zəhmət olmasa bir Asena modulu adı yazın.",
-            "NEED_MODULE": "Zəhmət olmasa hansı Asena modulu üçün kömək istədiyinizi qeyd edin !!\nİstifadəsi: .asena <modul adı>"
+            "NEED_PLUGIN": "Zəhmət olmasa bir Brend modulu adı yazın.",
+            "NEED_MODULE": "Zəhmət olmasa hansı Brend modulu üçün kömək istədiyinizi qeyd edin !!\nİstifadəsi: .brend <modul adı>"
         },
 
         "__helpme": {
@@ -53,7 +53,7 @@
             "INVALID_MEDIA": "```Media etibarlı deyil.```",
             "PRIVATE": "`Bu əmr xüsusi mesajda istifadə edilə bilməz!`",
             "EKLE": "`Uğurla əlavə edildi`",
-            "BRAIN": "`Xəta! Bunu Asena Səlahiyyətli birinə edə bilmərəm.`",
+            "BRAIN": "`Xəta! Bunu Brend Səlahiyyətli birinə edə bilmərəm.`",
             "BANNING": "`İstifadəçi qara siyahıya əlavə edilir...`",
             "ALREADY_GBANNED": "`Xəta! İstifadəçi artıq dünya miqyasında qadağan edilmişdir.`",
             "GBANNED_REASON": "`İstifadəçi dünya miqyasında qadağan edildi!`\n**Səbəbi:**",
@@ -153,8 +153,8 @@
             "EFECTING": "`Effekt hazırlanır...`",
             "NOT_FOUND_EFECT": "**Qeyd etdiyiniz effekt tapılmadı! **`İstifadə edə biləcəyiniz effektlər: ``çocuk/robot/earrape/hızlı/parazit/yankı`",
             "NEED_VIDEO": "`Zəhmət olmasa bir videoya cavab verin!`",
-            "WITH_ASENA":"@AsenaUserBot `ilə effekt hazırlandı.`",
-            "WITH_ASENA_GIF": "@AsenaUserBot `ilə Gif'ə çevrildi.`",
+            "WITH_BREND":"@BrendUserBot `ilə effekt hazırlandı.`",
+            "WITH_BREND_GIF": "@BrendUserBot `ilə Gif'ə çevrildi.`",
             "CONVERTING_TO_GIF": "Gif'ə çevrilir...",
             "UPLOADING_GIF": "`Gif yüklənir...`",
             "ERROR": "Gif'ə çevirə bilmədim :/"
@@ -271,7 +271,7 @@
 
         "galeri": {
             "ADDED_LIST": "`Şəkil növbəyə əlavə edildi.`",
-            "INVALID_URL": "`Səhf bir şəkil URL'i yazdınız. İstifadəsi haqqında bir fikriniz yoxdursa, ` `.asena galeri` `yazın.`",
+            "INVALID_URL": "`Səhf bir şəkil URL'i yazdınız. İstifadəsi haqqında bir fikriniz yoxdursa, ` `.brend galeri` `yazın.`",
             "EXAMPLE": "`Zəhmət olmasa bir şəkil adressi yazın. Nümunə olaraq: ` `.galeri ekle https://i.resimyukle.xyz/7Qbbc9.jpeg`",
             "LIST": "Növbəyə əlavə etdiyiniz şəkillər",
             "REMOVED": "**Növbədəki şəkil uğurla silindi**",
@@ -279,7 +279,7 @@
             "NEED_NUMBER": "Zəhmət olmasa şəklin sırasını qeyd edin. Nümunə:",
             "WORKING": "`Hal-hazırda Qalareya işləyir.`",
             "STARTED": "`Qalareya işləməyə başladı.`",
-            "NEED_PHOTO": "Qalereya işi üçün fotoşəkillər əlavə etməlisiniz. Əlavə etməyi bilmirsinizsə, .asena galeri ilə istifadəsini öyrənə bilərsiniz.",
+            "NEED_PHOTO": "Qalereya işi üçün fotoşəkillər əlavə etməlisiniz. Əlavə etməyi bilmirsinizsə, .brend galeri ilə istifadəsini öyrənə bilərsiniz.",
             "STOPPED": "`Qalereya dayandı!`",
             "ALREADY_STOP": "`Qalareya onsuzda işləmir.`",
             "INVALID": "**Bilinməyən komanda** İstifadəsi:\n\nQalareyaya şəkil əlavə etmək: `.galeri ekle https://i.resimyukle.xyz/7Qbbc9.jpeg`\nQalareya siyahısını görmək: `.galeri liste`\nSıradan bir şəkil silmək: `.galeri sil <sıra sayı>`"
@@ -357,16 +357,16 @@
             "REPLY_TO_FILE": "`Bir fayla cavab verin.`",
             "QUERY": "Sorğu",
             "RESULT": "Nəticə",
-            "NEED_MUCH_DATA_FOR_RANDOM": "`2 və ya daha çox məhsul tələb olunur. Daha çox məlumat üçün .asena təsadüfi əmrini daxil edin.`",
+            "NEED_MUCH_DATA_FOR_RANDOM": "`2 və ya daha çox məhsul tələb olunur. Daha çox məlumat üçün .brend təsadüfi əmrini daxil edin.`",
             "SLEEP_DESC": "İstifadə qaydası: `.sleep [saniyə]`",
             "SLEEPING": "`Xoruldayaraq yatıram...`",
             "GOODMORNIN_YALL": "`Sabahınız xeyir!`",
             "GOODBYE_MFRS": "`Görüşənədək... *Windows XP söndürlmə səsi*`",
             "RESTARTING": "`Bot yenidən qoşulur..`",
-            "SUPPORT_GROUP": "[Buradan](http://t.me/AsenaSupport) Dəstək qrupumuza çata bilərsiniz.",
-            "CREATOR": "Bu bot \n[Yusuf Usta](https://t.me/Fusuf) tərəfindən hazırlanmışdır. \n",
-            "README": "[Asena README.md](https://github.com/quiec/AsenaUserBot/blob/master/README.md)",
-            "REPO": "[Asena Repo](https://github.com/quiec/asenauserbot)",
+            "SUPPORT_GROUP": "[Buradan](http://t.me/BrendSupport) Dəstək qrupumuza çata bilərsiniz.",
+            "CREATOR": "Bu bot \n[Hüseyn](https://t.me/Mr_HD_20) tərəfindən hazırlanmışdır. \n",
+            "README": "[Brend README.md](https://github.com/brendsupport/brenduserbot/blob/main/README.md)",
+            "REPO": "[Brend Repo](github.com/brendsupport/brenduserbot)",
             "CHECK_LOGS": "`Tapılmış Mesaj üçün istifadəçi qeydlərini yoxlayın!`"
         },
 
@@ -527,7 +527,7 @@
             "SEARCHING": "`Musiqi axtarılır...`",
             "BLOCKED_DEEZER": "`Mmmh deyəsən` @DeezerMusicBot `bloklamısan zəhmət olmasa bloku aç",
             "NOT_FOUND": "`Axtardığınız mahnı tapılmadı! Bağışlayın.`",
-            "UPLOADED_WITH": "@AsenaUserBot ilə yükləndi",
+            "UPLOADED_WITH": "@BrendUserBot ilə yükləndi",
             "USAGE": "`İstifadəsi:` `.song mahnı ad/youtube url/spotify url`",
             "SEARCHING_SPOT": "`Mahnıların axtarışı və yüklənməsini gözləyin!",
             "DOWNLOADED": "`Yükləmə uğurlu oldu, xahiş edirəm gözləyin.`",
@@ -565,7 +565,7 @@
             "QUERY": "Sorğu",
             "RESULT": "Nəticə",
             "NOT_FOUND": "Heçnə tapılmadı",
-            "EXAMPLE": "`Bir nümunə görmək üçün .asena pip əmrindən istifadə edin.`"
+            "EXAMPLE": "`Bir nümunə görmək üçün .brend pip əmrindən istifadə edin.`"
 
         },
 
@@ -587,7 +587,7 @@
             "NOT_FOUND": "qovluğu tapa bilmədi",
             "GIT_ERROR": "Git xətası!",
             "NOT_GIT": "qovluğlu bir git reposu kimi görünmür. \nAncaq botu .update now əmri ilə zorla yeniləməklə bu problemi həll edə bilərsiniz.",
-            "INVALID_BRANCH": "**[UPDATER]:**` Düşünürəm ki, Asena botunuzu dəyişdirdiniz və öz filialınızdan istifadə edirsiniz.\nBu vəziyyət yenilənməni edənin başını qarışdırır,\nGüncəllənmə haradan çəkiləcək?\nXahiş edirəm rəsmi repodan Asena Botunu istifadə edin.`",
+            "INVALID_BRANCH": "**[UPDATER]:**` Düşünürəm ki, Brend botunuzu dəyişdirdiniz və öz filialınızdan istifadə edirsiniz.\nBu vəziyyət yenilənməni edənin başını qarışdırır,\nGüncəllənmə haradan çəkiləcək?\nXahiş edirəm rəsmi repodan brend Botunu istifadə edin.`",
             "UPDATE": "\n`Botun` **Ən güncəl versiyadadır!** `Branch:` **{}**\n",
             "WAS_UPDATE": "**{} üçün yeni güncəlləmə mövcuddur!\n\nDəyişikliklər:**\n`{}`",
             "BIG": "`Dəyişikliklərin siyahısı çox böyükdür, ona bir fayl kimi baxmalısınız.`",
