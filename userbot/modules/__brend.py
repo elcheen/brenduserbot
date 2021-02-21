@@ -11,7 +11,7 @@ LANG = get_value("__brend")
 # ████████████████████████████████ #
 
 @register(outgoing=True, pattern="^.brend(?: |$)(.*)")
-async def asena(event):
+async def brend(event):
     
     args = event.pattern_match.group(1).lower()
     if args:
