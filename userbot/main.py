@@ -151,7 +151,7 @@ try:
 
     # PLUGIN MESAJLARI AYARLIYORUZ
     PLUGIN_MESAJLAR = {}
-    ORJ_PLUGIN_MESAJLAR = {"alive": "`Tanrı Türk'ü Korusun. 🐺 Asena çalışıyor.`", "afk": f"`{str(choice(AFKSTR))}`", "kickme": "`Güle Güle ben gidiyorum `🤠", "pm": UNAPPROVED_MSG, "dızcı": str(choice(DIZCILIK_STR)), "ban": "{mention}`, yasaklandı!`", "mute": "{mention}`, sessize alındı!`", "approve": "{mention}`, bana mesaj gönderebilirsin!`", "disapprove": "{mention}`, artık bana mesaj gönderemezsin!`", "block": "{mention}`, engellendin!`"}
+    ORJ_PLUGIN_MESAJLAR = {"alive": "` Brend Userbot super işləyir.`", "afk": f"`{str(choice(AFKSTR))}`", "kickme": "`Özünüzdən muğayat olun mən gedirəm", "pm": UNAPPROVED_MSG, "dızcı": str(choice(DIZCILIK_STR)), "ban": "{mention}`, qadağan edildi!`", "mute": "{mention}`, səssizə alındı`", "approve": "{mention}`, mənə mesaj göndərə bilərsən!`", "disapprove": "{mention}`, Bundan sonra mənə mesaj göndərə bilməzsən!`", "block": "{mention}`, əngəlləndin!`"}
 
     PLUGIN_MESAJLAR_TURLER = ["alive", "afk", "kickme", "pm", "dızcı", "ban", "mute", "approve", "disapprove", "block"]
     for mesaj in PLUGIN_MESAJLAR_TURLER:
@@ -167,7 +167,7 @@ try:
             else:
                 PLUGIN_MESAJLAR[mesaj] = dmsj
     if not PLUGIN_CHANNEL_ID == None:
-        LOGS.info("Pluginler Yükleniyor")
+        LOGS.info("Pluginlər Yüklənir")
         try:
             KanalId = bot.get_entity(PLUGIN_CHANNEL_ID)
         except:
@@ -192,7 +192,7 @@ try:
 
                     spec.loader.exec_module(mod)
                 except Exception as e:
-                    LOGS.info(f"`Yükleme başarısız! Plugin hatalı.\n\nHata: {e}`")
+                    LOGS.info(f"le`Yükləmə uğursuz oldu! Plugin xətalıdır;.\n\nXəta: {e}`")
 
                     try:
                         plugin.delete()
@@ -204,7 +204,7 @@ try:
                     continue
                 extractCommands('./userbot/modules/' + plugin.file.name)
     else:
-        bot.send_message("me", f"`Lütfen pluginlerin kalıcı olması için PLUGIN_CHANNEL_ID'i ayarlayın.`")
+        bot.send_message("me", f"`Xaiş edirik, pluginlərin qalıcı olması üçün PLUGIN_CHANNEL_ID'i yerləşdirin.`")
 except PhoneNumberInvalidError:
     print(INVALID_PH)
     exit(1)
@@ -227,9 +227,9 @@ async def FotoDegistir (foto):
 for module_name in ALL_MODULES:
     imported_module = import_module("userbot.modules." + module_name)
 
-LOGS.info("Botunuz çalışıyor! Herhangi bir sohbete .alive yazarak Test edin."
-          " Yardıma ihtiyacınız varsa, Destek grubumuza gelin t.me/BrendSupport")
-LOGS.info(f"Bot sürümünüz: Brend {BREND_VERSION}")
+LOGS.info("Botunuz problemsiz şəkildə işləyir! hər-hansısa bir söhbətə .alive yazaraq yoxlaya bilərsiniz."
+          " Köməyə ehtiyacınız varsa, Dəstək qrupumuza gəlin t.me/BrendSupport")
+LOGS.info(f"Bot versıyanız: Brend {BREND_VERSION}")
 
 """
 if len(argv) not in (1, 3, 4):
