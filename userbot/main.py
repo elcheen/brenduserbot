@@ -40,27 +40,26 @@ AFKSTR = [
     "Getsən gedirsənsə sevgili yar amma unutma.\nBirazdan gələcəm",
     "Bəzən həyatda ən yaxşı şeylər gözləməyə dəyər…\nSəndə mənim gəlməyimi gözlə.",
     "Dərsə gedən bir uşaq yıxıldı buz üstə. Sonrada durub yoluna davam elədi.\nSahibim burda deyil amma istəsən biz səninlə söhbət edə bilərik.",
-    "Hələdə burda olmadığımı anlamadın?\nSənidə qınamıram eşşəy nə bilir zəfəran nədi?😂.\nBirazdan gələrəm",
+    "Hələdə burda olmadığımı anlamadın?\nSənidə qınamıram eşşəy nə bilir zəfəran nədi?😂.\nBirazdan gələrəm😏\n\n",
     "A kişi saa dedim yazma!\nBurda deyiləmdə aaaa...",
     "Sahibim burda yoxdu mənə dediki sevgilisinnən bezib və yeni bir sevgili tapmağa gedir",
     "Mən hazırda klaviaturadan uzağam, ancaq ekranda kifayət qədər yüksək səslə qışqırırsan, səni eşidərəm.",
-    "Şu yönde ilerliyorum\n---->",
-    "Şu yönde ilerliyorum\n<----",
-    "Lütfen mesaj bırakın ve beni zaten olduğumdan daha önemli hissettirin.",
-    "Sahibim burada değil, bu yüzden bana yazmayı bırak.",
-    "Burada olsaydım,\nSana nerede olduğumu söylerdim.\n\nAma ben değilim,\ngeri döndüğümde bana sor...",
-    "Uzaklardayım!\nNe zaman dönerim bilmiyorum !\nUmarım birkaç dakika sonra!",
-    "Sahibim şuan da müsait değil. Adınızı, numarınızı ve adresinizi verirseniz ona iletibilirm ve böylelikle geri döndüğü zaman.",
-    "Üzgünüm, sahibim burada değil.\nO gelene kadar benimle konuşabilirsiniz.\nSahibim size sonra döner.",
-    "Bahse girerim bir mesaj bekliyordun!",
-    "Hayat çok kısa, yapacak çok şey var...\nOnlardan birini yapıyorum...",
-    "Şu an burada değilim....\nama öyleysem ...\n\nbu harika olmaz mıydı?",
+    "Jizni varam {mention}\nQapıya gedən yol ---->\n gözlə birazdan gələcəm:)",
+    "Sahibim axırıncı dəfə bu tərəf getdi\n<----\nSəndə arxasıyca qaç bəlkə çata bildin.",
+    "Xahiş edirəm bir mesaj saxlayın və o mesaj məni indi olduğumdan daha dəyərli hiss etdirsin.",
+    "Sahibim burada deyil səndə mənə yazmağı dayandır.",
+    "Burda olsaydım,\nSizə harada olduğumu deyərdim.\n\nAmma mən deyiləm,\nqayıdanda məndən soruş...",
+    "Mən uzaqdayam!\nNə vaxt qayıdacağımıda bilmirəm !\nÜmid varam bir neçə dəqiqəyə.",
+    "Bağışlayın, sahibim burada deyil.\nO gələnə qədər mənimlə danışa bilərsən.\nSahibim sonra sizə qayıdacaq.",
+    "Güman edirəm ki, bir mesaj gözləyirdiniz!",
+    "Həyat çox qısadır, edilə bilinəcək çox şey var...\nOnlardan birini edirəm...",
+    "Bu qədər zəhlə tökən olduğunu bilmirdim\nSAHİBİM\nBURDA\nDEYİL!!!",
 ]
 
-UNAPPROVED_MSG = ("`Hey,` {mention}`! Bu bir bot. Endişelenme.\n\n`"
-                  "`Sahibim sana PM atma izni vermedi. `"
-                  "`Lütfen sahibimin aktif olmasını bekleyin, o genellikle PM'leri onaylar.\n\n`"
-                  "`Bildiğim kadarıyla o kafayı yemiş insanlara PM izni vermiyor.`")
+UNAPPROVED_MSG = ("`Hey,` {mention}`! Mən sahibimin botuyam. Narahat olma.\n\n`"
+                  "`Sahibim sənə PM-ə yazma icazə vermədi. `"
+                  "`Xahiş edirəm sahibimin aktiv olmasını gözləyin, ümumiyyətlə PM-ləri təsdiqləyir.\n\n`"
+                  "`Gözləməyi seçdiyiniz üçün təşəkkürlər🤍.`")
 
 DB = connect("learning-data-root.check")
 CURSOR = DB.cursor()
@@ -130,7 +129,7 @@ def extractCommands(file):
             for Komut in Komutlar:
                 # if re.search('\[(\w*)\]', Komut):
                     # Komut = re.sub('(?<=\[.)[A-Za-z0-9_]*\]', '', Komut).replace('[', '')
-                CmdHelp.add_command(Komut, None, 'Bu plugin dışarıdan yüklenmiştir. Herhangi bir açıklama tanımlanmamıştır.')
+                CmdHelp.add_command(Komut, None, 'Bu plugin kənardan yüklənmişdir. Hərhansısa bir açıqlama tapılmadı.')
             CmdHelp.add()
 
 try:
@@ -181,7 +180,7 @@ try:
                 if not os.path.exists("./userbot/modules/" + plugin.file.name):
                     dosya = bot.download_media(plugin, "./userbot/modules/")
                 else:
-                    LOGS.info("Bu Plugin Zaten Yüklü " + plugin.file.name)
+                    LOGS.info("Bu Plugini Onsuz Yüklənib " + plugin.file.name)
                     extractCommands('./userbot/modules/' + plugin.file.name)
                     dosya = plugin.file.name
                     continue 
