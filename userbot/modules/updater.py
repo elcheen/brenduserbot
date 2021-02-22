@@ -172,8 +172,3 @@ CmdHelp('update').add_command(
 ).add_command(
     'update now', None, 'Botunuzu günceller.'
 ).add()
-CmdHelp('update').add_command(
-    'update', None, 'Botunuza siz kurduktan sonra herhangi bir güncelleme gelip gelmediğini kontrol eder.'
-).add_command(
-    'update now', None, 'Botunuzu günceller.'
-).add()
