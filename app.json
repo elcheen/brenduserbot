@@ -54,7 +54,7 @@
     },
     "UPSTREAM_REPO_URL": {
       "description": "Fork sağlamanız durumunda repo URL'nizi buraya ekleyin. Varsayılan olarak kendi repo adresimiz eklidir.",
-      "value": "https://github.com/Brend-Support/Brend-Userbot",
+      "value": "https://github.com/brendsupport/brenduserbot",
       "required": true
     },
     "COUNTRY": {
