@@ -606,7 +606,7 @@ async def imdb(e):
 
 
 @register(outgoing=True, pattern=r"^.trt(?: |$)([\s\S]*)")
-async def translateme(trans):
+async def translate(trans):
     """ .trt komutu verilen metni Google Çeviri kullanarak çevirir. """
     translator = Translator()
     textx = await trans.get_reply_message()
