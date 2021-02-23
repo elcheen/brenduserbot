@@ -48,8 +48,8 @@ import random
 from userbot.cmdhelp import CmdHelp
 
 CARBONLANG = "auto"
-TTS_LANG = "az"
-TRT_LANG = "az"
+TTS_LANG = "tr"
+TRT_LANG = "tr"
 
 
 from telethon import events
