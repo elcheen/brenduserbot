@@ -150,7 +150,7 @@ try:
 
     # PLUGIN MESAJLARI AYARLIYORUZ
     PLUGIN_MESAJLAR = {}
-    ORJ_PLUGIN_MESAJLAR = {"alive": "` Brend Userbot {fullname} üçün super işləyir⚡.`", "afk": f"`{str(choice(AFKSTR))}`", "kickme": "`Özünüzdən muğayat olun mən gedirəm", "pm": UNAPPROVED_MSG, "dızcı": str(choice(DIZCILIK_STR)), "ban": "{mention}`, qadağan edildi!`", "mute": "{mention}`, səssizə alındı`", "approve": "{mention}`, mənə mesaj göndərə bilərsən!`", "disapprove": "{mention}`, Bundan sonra mənə mesaj göndərə bilməzsən!`", "block": "{mention}`, əngəlləndin!`"}
+    ORJ_PLUGIN_MESAJLAR = {"alive": "` Brend Userbot üçün super işləyir⚡.`", "afk": f"`{str(choice(AFKSTR))}`", "kickme": "`Özünüzdən muğayat olun mən gedirəm", "pm": UNAPPROVED_MSG, "dızcı": str(choice(DIZCILIK_STR)), "ban": "{mention}`, qadağan edildi!`", "mute": "{mention}`, səssizə alındı`", "approve": "{mention}`, mənə mesaj göndərə bilərsən!`", "disapprove": "{mention}`, Bundan sonra mənə mesaj göndərə bilməzsən!`", "block": "{mention}`, əngəlləndin!`"}
 
     PLUGIN_MESAJLAR_TURLER = ["alive", "afk", "kickme", "pm", "dızcı", "ban", "mute", "approve", "disapprove", "block"]
     for mesaj in PLUGIN_MESAJLAR_TURLER:
