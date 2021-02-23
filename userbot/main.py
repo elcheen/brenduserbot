@@ -34,9 +34,9 @@ DIZCILIK_STR = [
 
 AFKSTR = [
     "Mən indi tələsirəm, daha sonra bir mesaj göndərə bilməzsən? Onsuz da yenə gələcəm.",
-    "İstədiyiniz şəxs hal-hazırda mesajınıza cavab vermir.\nXaiş edirik biraz sonra mesaj yazın!",
+    "Yazdığınız şəxs hal-hazırda mesajınıza cavab vermir.\nXaiş edirik biraz sonra mesaj yazın!",
     "Bir neçə dəqiqədən sonra gələcəm. Ancaq gəlməsəm ...\ndaha çox gözləyin.",
-    "Mən indi burada deyiləm, yəqin ki, başqa bir yerdəyəm.",
+    "Mən indi burada deyiləm, yəqin ki, başqa bir yerdəyəm.\n{last_second}saniyə əvvəl burda idi",
     "Getsən gedirsənsə sevgili yar amma unutma.\nBirazdan gələcəm",
     "Bəzən həyatda ən yaxşı şeylər gözləməyə dəyər…\nSəndə mənim gəlməyimi gözlə.",
     "Dərsə gedən bir uşaq yıxıldı buz üstə. Sonrada durub yoluna davam elədi.\nSahibim burda deyil amma istəsən biz səninlə söhbət edə bilərik.",
@@ -150,7 +150,7 @@ try:
 
     # PLUGIN MESAJLARI AYARLIYORUZ
     PLUGIN_MESAJLAR = {}
-    ORJ_PLUGIN_MESAJLAR = {"alive": "` Brend Userbot super işləyir.`", "afk": f"`{str(choice(AFKSTR))}`", "kickme": "`Özünüzdən muğayat olun mən gedirəm", "pm": UNAPPROVED_MSG, "dızcı": str(choice(DIZCILIK_STR)), "ban": "{mention}`, qadağan edildi!`", "mute": "{mention}`, səssizə alındı`", "approve": "{mention}`, mənə mesaj göndərə bilərsən!`", "disapprove": "{mention}`, Bundan sonra mənə mesaj göndərə bilməzsən!`", "block": "{mention}`, əngəlləndin!`"}
+    ORJ_PLUGIN_MESAJLAR = {"alive": "` Brend Userbot (my.{fullname}) üçün super işləyir⚡.`", "afk": f"`{str(choice(AFKSTR))}`", "kickme": "`Özünüzdən muğayat olun mən gedirəm", "pm": UNAPPROVED_MSG, "dızcı": str(choice(DIZCILIK_STR)), "ban": "{mention}`, qadağan edildi!`", "mute": "{mention}`, səssizə alındı`", "approve": "{mention}`, mənə mesaj göndərə bilərsən!`", "disapprove": "{mention}`, Bundan sonra mənə mesaj göndərə bilməzsən!`", "block": "{mention}`, əngəlləndin!`"}
 
     PLUGIN_MESAJLAR_TURLER = ["alive", "afk", "kickme", "pm", "dızcı", "ban", "mute", "approve", "disapprove", "block"]
     for mesaj in PLUGIN_MESAJLAR_TURLER:
