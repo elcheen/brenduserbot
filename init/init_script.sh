@@ -26,7 +26,7 @@ echo "$1=y" >> $prog_f
 
 # Welcome Message
 welcome() {
-    echo "*****Welcome userbot setup*****
+    echo "*****Welcome to Quiec's userbot setup*****
 This Guided Setup shall help you get your own userbot up and running.
 You might be asked for sudo password several number of times."
 }
@@ -48,11 +48,11 @@ botclone() {
     cd ~
     echo "Cloning bot sources..."
     if [ -z "$bot_clone" ]; then
-        git clone https://github.com/brendsupport/brenduserbot
+        git clone https://github.com/Quuiec/AsenaUserBot -b master
         save_prog "bot_clone"
     fi
     echo "DONE!!"
-    cd brenduserbot
+    cd Telegram-UserBot
 }
 
 # Requirement install function
@@ -171,9 +171,7 @@ systemd() {
 # Close down
 close() {
     echo "
-
 Pushed to systemd service. Bot runs on docker, and it will run across reboots too.
-
 Hope you love using my bot."
     exit
 }
