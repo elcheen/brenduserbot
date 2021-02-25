@@ -1,14 +1,3 @@
-# Copyright (C) 2019 The Raphielscape Company LLC.
-#
-# Licensed under the Raphielscape Public License, Version 1.c (the "License");
-# you may not use this file except in compliance with the License.
-#
-
-# Asena UserBot - Yusuf Usta
-
-
-"""Bir bölgenin hava durumunu gösterir."""
-
 import json
 from requests import get
 from datetime import datetime
@@ -21,24 +10,16 @@ from userbot import OPEN_WEATHER_MAP_APPID as OWM_API
 from userbot.events import register
 from userbot.cmdhelp import CmdHelp
 
-# ===== CONSTANT =====
-# ██████ LANGUAGE CONSTANTS ██████ #
-
 from userbot.language import (get_value, LANGUAGE_JSON)
 LANG = get_value("weather")
-
-# ████████████████████████████████ #
 
 if WEATHER_DEFCITY:
     DEFCITY = WEATHER_DEFCITY
 else:
     DEFCITY = None
-# ====================
-
 
 async def get_tz(con):
-    """ Verilen ülkenin zaman dilimini alır. """
-    """ @aragon12 ve @zakaryan2004'e teşekkürler. """
+    # @Mr_HD_20 yə təşəkkürlər
     for c_code in c_n:
         if con == c_n[c_code]:
             return tz(c_tz[c_code][0])
@@ -49,9 +30,8 @@ async def get_tz(con):
         return
 
 
-@register(outgoing=True, pattern="^.weather(?: |$)(.*)")
+@register(outgoing=True, pattern="^.hava(?: |$)(.*)")
 async def get_weather(weather):
-    """ .weather komutu bir bölgenin hava durumunu OpenWeatherMap üzerinden alır. """
 
     if not OWM_API:
         await weather.edit(
@@ -149,5 +129,5 @@ async def get_weather(weather):
         f"`{cityname}, {fullc_n}`\n" + f"`{time}`")
 
 CmdHelp('weather').add_command(
-    'weather', '<şehir>', 'Bir bölgenin hava durumunu verir.'
+    'hava', '<şəhər>', 'Bir bölgənin havası statusunu təqdim edir.'
 ).add()
