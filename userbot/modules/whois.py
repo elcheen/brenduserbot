@@ -11,7 +11,7 @@ from userbot.cmdhelp import CmdHelp
 from userbot.language import get_value
 LANG = get_value("whois")
 
-@register(pattern=".whois(?: |$)(.*)", outgoing=True)
+@register(pattern=".bukimdi(?: |$)(.*)", outgoing=True)
 async def who(event):
     await event.edit(
         LANG['GETTING_DATA'])
@@ -137,5 +137,5 @@ async def fetch_info(replied_user, event):
     return photo, caption
 
 CmdHelp('whois').add_command(
-    'whois',' İstifadəçinin məlumatlarını alır.'
+    'bukimdi',' İstifadəçinin məlumatlarını alır.'
 ).add()
