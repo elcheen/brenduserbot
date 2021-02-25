@@ -88,7 +88,6 @@ def extractCommands(file):
         dosyaAdi = file.replace('.py', '')
         CmdHelp = userbot.cmdhelp.CmdHelp(dosyaAdi, False)
 
-        # Komutları Alıyoruz #
         for Command in Pattern:
             Command = Command[1]
             if Command == '' or len(Command) <= 1:
@@ -110,7 +109,6 @@ def extractCommands(file):
                             KomutStr = Command
                         Komutlar.append(KomutStr)
 
-            # AsenaPY
             Asenapy = re.search('\"\"\"ASENAPY(.*)\"\"\"', FileRead, re.DOTALL)
             if not Asenapy == None:
                 Asenapy = Asenapy.group(0)
@@ -139,16 +137,13 @@ try:
     if idim in asenabl:
         bot.disconnect()
 
-    # ChromeDriver'ı Ayarlayalım #
     try:
         chromedriver_autoinstaller.install()
     except:
         pass
     
-    # Galeri için değerler
     GALERI = {}
 
-    # PLUGIN MESAJLARI AYARLIYORUZ
     PLUGIN_MESAJLAR = {}
     ORJ_PLUGIN_MESAJLAR = {"alive": "` Brend Userbot super işləyir⚡.`", "afk": f"`{str(choice(AFKSTR))}`", "kickme": "`Özünüzdən muğayat olun mən gedirəm", "pm": UNAPPROVED_MSG, "dızcı": str(choice(DIZCILIK_STR)), "ban": "{mention}`, qadağan edildi!`", "mute": "{mention}`, səssizə alındı`", "approve": "{mention}`, mənə mesaj göndərə bilərsən!`", "disapprove": "{mention}`, Bundan sonra mənə mesaj göndərə bilməzsən!`", "block": "{mention}`, əngəlləndin!`"}
 
