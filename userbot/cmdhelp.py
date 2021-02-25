@@ -65,9 +65,9 @@ class CmdHelp:
                 result += f"**🛠 Əmr:** `{PATTERNS[:1]}{command['command']} {command['params']}`\n"
                 
             if command['example'] == None:
-                result += f"**💬 İzahat:** `{command['usage']}`\n\n"
+                result += f"**💬 Haqqında:** `{command['usage']}`\n\n"
             else:
-                result += f"**💬 İzahat:** `{command['usage']}`\n"
+                result += f"**💬 Haqqında:** `{command['usage']}`\n"
                 result += f"**⌨️ Nümunə:** `{PATTERNS[:1]}{command['example']}`\n\n"
         return result
 
@@ -78,7 +78,7 @@ class CmdHelp:
     
     def getText(self, text : str):
         if text == 'REPLY_OR_USERNAME':
-            return '<istifadəçi adı> <istifadəçi adı/cavablama>'
+            return '<istifadəçi adı> <şəxsi ad/cavablama>'
         elif text == 'OR':
             return 'və ya'
         elif text == 'USERNAMES':
