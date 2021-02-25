@@ -48,11 +48,11 @@ botclone() {
     cd ~
     echo "Cloning bot sources..."
     if [ -z "$bot_clone" ]; then
-        git clone https://github.com/brendsupport/brenduserbot -b master
+        git clone https://github.com/brendsupport/brenduserbot
         save_prog "bot_clone"
     fi
     echo "DONE!!"
-    cd Telegram-UserBot
+    cd brenduserbot
 }
 
 # Requirement install function
