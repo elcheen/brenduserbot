@@ -51,7 +51,7 @@ async def randomise(items):
 
 @register(outgoing=True, pattern="^.sleep( [0-9]+)?$")
 async def sleepybot(time):
-    """ .sleep komutu Asena'nın birkaç saniye uyumasına olanak sağlar. """
+    """ .sleep komutu Brend'nın birkaç saniye uyumasına olanak sağlar. """
     if " " not in time.pattern_match.group(1):
         await time.reply(LANG['SLEEP_DESC'])
     else:
