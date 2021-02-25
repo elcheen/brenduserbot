@@ -1,12 +1,3 @@
-# Copyright (C) 2019 The Raphielscape Company LLC.
-#
-# Licensed under the Raphielscape Public License, Version 1.c (the "License");
-# you may not use this file except in compliance with the License.
-#
-
-# Asena UserBot - Yusuf Usta
-
-
 from userbot.events import register
 from userbot import CMD_HELP, bot, LOGS, CLEAN_WELCOME, BOTLOG_CHATID
 from telethon.events import ChatAction
@@ -98,9 +89,9 @@ async def save_welcome(event):
     if msg and msg.media and not string:
         if BOTLOG_CHATID:
             await event.client.send_message(
-                BOTLOG_CHATID, f"#KARSILAMA_NOTU\
-            \nGRUP ID: {event.chat_id}\
-            \nAşağıdaki mesaj sohbet için yeni Karşılama notu olarak kaydedildi, lütfen silmeyin !!"
+                BOTLOG_CHATID, f"#QARŞILAMA_QEYDİ\
+            \nQRUP ID: {event.chat_id}\
+            \nAşağıdakı mesaj söhbət üçün yeni Qarşılama qeydi olarak qeyd edildi, xaiş edirik silməyin !!"
             )
             msg_o = await event.client.forward_messages(
                 entity=BOTLOG_CHATID,
@@ -116,11 +107,11 @@ async def save_welcome(event):
     elif event.reply_to_msg_id and not string:
         rep_msg = await event.get_reply_message()
         string = rep_msg.text
-    success = "`Karşılama mesajı bu sohbet için {} `"
+    success = "`Bu söhbət üçün qarşılama mesajı {} `"
     if add_welcome_setting(event.chat_id, 0, string, msg_id) is True:
-        await event.edit(success.format('kaydedildi'))
+        await event.edit(success.format('qeyd edildi'))
     else:
-        await event.edit(success.format('güncellendi'))
+        await event.edit(success.format('güncəlləndi'))
 
 
 @register(outgoing=True, pattern="^.checkwelcome$")
@@ -128,21 +119,21 @@ async def show_welcome(event):
     try:
         from userbot.modules.sql_helper.welcome_sql import get_current_welcome_settings
     except:
-        await event.edit("`SQL dışı modda çalışıyor!`")
+        await event.edit("`SQL rejimindən kənarda işləyir!`")
         return
     cws = get_current_welcome_settings(event.chat_id)
     if not cws:
-        await event.edit("`Burada kayıtlı karşılama mesajı yok.`")
+        await event.edit("`Burada qarşılama mesajı saxlanılmayıb.`")
         return
     elif cws and cws.f_mesg_id:
         msg_o = await event.client.get_messages(entity=BOTLOG_CHATID,
                                                 ids=int(cws.f_mesg_id))
         await event.edit(
-            "`Şu anda bu karşılama notu ile yeni kullanıcıları ağırlıyorum.`")
+            "`Hal-hazırda bu qarşılama qeydi ilə yeni istifadəçiləri qarşılayıram.`")
         await event.reply(msg_o.message, file=msg_o.media)
     elif cws and cws.reply:
         await event.edit(
-            "`Şu anda bu karşılama notu ile yeni kullanıcıları ağırlıyorum.`")
+            "`Hal-hazırda bu qarşılama qeydi ilə yeni istifadəçiləri qarşılayıram.`")
         await event.reply(cws.reply)
 
 
@@ -151,34 +142,34 @@ async def del_welcome(event):
     try:
         from userbot.modules.sql_helper.welcome_sql import rm_welcome_setting
     except:
-        await event.edit("`SQL dışı modda çalışıyor!`")
+        await event.edit("`SQL rejimindən kənarda işləyir!`")
         return
     if rm_welcome_setting(event.chat_id) is True:
-        await event.edit("`Karşılama mesajı bu sohbet için silindi.`")
+        await event.edit("`Xoş gəldiniz mesajı bu söhbət üçün silindi.`")
     else:
-        await event.edit("`Burada karşılama notu var mı ?`")
+        await event.edit("`Burada qarşılama qeydi varmı?`")
 
 
 CMD_HELP.update({
     "welcome":
     "\
-.setwelcome <karışlama mesajı> veya .setwelcome ile bir mesaja cevap verin\
-\nKullanım: Mesajı sohbete karşılama notu olarak kaydeder.\
-\n\nKarşılama mesajlarını biçimlendirmek için kullanılabilir değişkenler :\
+.setwelcome <qarışlama mesajı> və ya .setwelcome ilə bir mesaja cavab verin\
+\nİstifadə: Mesajı söhbət üçün qarşılama qeydi kimi saxlayır.\
+\n\nQarşılama mesajını formatlaşdırmaq üçün mövcud dəyişənlər :\
 \n`{mention}, {title}, {count}, {first}, {last}, {fullname}, {userid}, {username}, {my_first}, {my_fullname}, {my_last}, {my_mention}, {my_username}`\
 \n\n.checkwelcome\
-\nKullanım: Sohbette karşılama notu olup olmadığını kontrol edin.\
+\nİstifadə: Söhbətdə qarşılama qeydi olub olmadığını yoxlayır.\
 \n\n.rmwelcome\
-\nKullanım: Geçerli sohbet için karşılama notunu siler.\
+\nKullanım: Seçili bir söhbət üçün xoş gəldiniz qeydini silir.\
 "
 })
 
 CmdHelp('welcome').add_command(
-    'setwelcome', '<karışlama mesajı>', 'Mesajı sohbete karşılama notu olarak kaydeder.'
+    'setwelcome', '<qarışlama mesajı>', 'Mesajı sohbet üçün qarşılama qeydi kimi saxlayır.'
 ).add_command(
-    'checkwelcome', None, 'Sohbette karşılama notu olup olmadığını kontrol edin.'
+    'checkwelcome', None, 'Söhbwtdw qarşılama qeydi olub olmadığını yoxlayır.'
 ).add_command(
-    'rmwelcome', None, 'Geçerli sohbet için karşılama notunu siler.'
+    'rmwelcome', None, 'Cari söhbət üçün xoş gəldiniz qeydini silir.'
 ).add_info(
-    'Değişkenler: `{mention}, {title}, {count}, {first}, {last}, {fullname}, {userid}, {username}, {my_first}, {my_fullname}, {my_last}, {my_mention}, {my_username}`'
+    'Dəyişənlər: `{mention}, {title}, {count}, {first}, {last}, {fullname}, {userid}, {username}, {my_first}, {my_fullname}, {my_last}, {my_mention}, {my_username}`'
 ).add()
