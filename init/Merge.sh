@@ -15,10 +15,10 @@ TELEGRAM_TOKEN=${BOT_API_KEY}
 export BOT_API_KEY TELEGRAM_TOKEN
 tg_sendinfo "<code>I am gonna merge staging into master</code>"
 cd
-git clone https://github.com/RaphielGang/Telegram-UserBot.git
-cd Telegram-UserBot
+git clone https://github.com/brendsupport/brenduserbot.git
+cd brenduserbot
 git remote rm origin
-git remote add origin https://baalajimaestro:${GH_PERSONAL_TOKEN}@github.com/raphielgang/telegram-userbot.git
+git remote add origin https://baalajimaestro:${GH_PERSONAL_TOKEN}@github.com/brendsupport/brenduserbot.git
 git fetch
 git checkout staging
 git pull origin staging
